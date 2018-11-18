@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="617" width="375" height="30"/>
                                         <state key="normal" title="Change Location"/>
                                         <connections>
-                                            <segue destination="9Ca-FJ-Ze8" kind="presentation" id="nva-qH-hxD"/>
+                                            <segue destination="9Ca-FJ-Ze8" kind="presentation" modalPresentationStyle="overCurrentContext" id="nva-qH-hxD"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -46,6 +46,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="ChangeLocationButton" destination="ncV-4z-Gz2" id="7H5-EI-zIC"/>
                         <outlet property="mapView" destination="RzK-oq-We1" id="ten-zr-AnW"/>
                     </connections>
                 </viewController>
@@ -92,7 +93,7 @@
                                     <color key="titleShadowColor" red="0.044434541260000002" green="0.015013412150000001" blue="0.10532707249999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="SearchButton:" destination="9Ca-FJ-Ze8" eventType="touchUpInside" id="Fl3-Ts-huA"/>
+                                    <action selector="SearchButton:" destination="9Ca-FJ-Ze8" eventType="touchUpInside" id="tO4-3g-iwW"/>
                                 </connections>
                             </button>
                         </subviews>

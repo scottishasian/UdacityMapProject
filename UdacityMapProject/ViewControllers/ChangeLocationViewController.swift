@@ -11,9 +11,12 @@ import UIKit
 class ChangeLocationViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var LocationTextField: UITextField!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.clear
+        view.isOpaque = false
         self.LocationTextField.delegate =  self
     }
     
@@ -26,8 +29,10 @@ class ChangeLocationViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-
     @IBAction func SearchButton(_ sender: Any) {
-        LocationTextField.resignFirstResponder()
+        if LocationTextField.text != "" {
+            LocationTextField.resignFirstResponder()
+            dismiss(animated: true, completion: nil)
+        }
     }
 }

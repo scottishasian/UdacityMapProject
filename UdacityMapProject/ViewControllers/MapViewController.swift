@@ -12,6 +12,8 @@ import MapKit
 class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var ChangeLocationButton: UIButton!
+    
     
     let regionRadius: CLLocationDistance = 1000
     
@@ -21,7 +23,12 @@ class MapViewController: UIViewController {
         let initialLocation = CLLocation(latitude: 55.9533, longitude: -3.1883)
         centreMapOnLocation(location: initialLocation)
         
+//        if self.presentedViewController != nil{
+//            ChangeLocationButton.isHidden = false
+//        }
+        //Hide change location button if modal is open
     }
+
 
     func centreMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
