@@ -12,5 +12,21 @@ struct Constants {
     
     static let parseID = "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr"
     static let restAPIKey = "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
-    static let allLocations = "https://parse.udacity.com/parse/classes/StudentLocation"
+    //static let allLocations = "https://parse.udacity.com/parse/classes/StudentLocation"
+
+    struct Udacity {
+        static let APIScheme = "https"
+        static let APIHost = "www.udacity.com"
+        static let APIPath = "/api"
+    }
+    
+    struct Parse {
+        static let APIScheme = "https"
+        static let APIHost = "parse.udacity.com"
+        static let APIPath = "/parse"
+    }
+    
+    struct ParseMethods {
+        static let studentLocations = "/classes/StudentLocations"
+    }
 }

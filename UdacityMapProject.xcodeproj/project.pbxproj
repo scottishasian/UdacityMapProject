@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2417985B21A1CD6000FF002D /* ChangeLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417985A21A1CD6000FF002D /* ChangeLocationViewController.swift */; };
+		2417986021A1DEF300FF002D /* DataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417985F21A1DEF300FF002D /* DataClient.swift */; };
 		2437BB95219EF06B00F62A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BB94219EF06B00F62A3C /* AppDelegate.swift */; };
 		2437BB97219EF06B00F62A3C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BB96219EF06B00F62A3C /* MapViewController.swift */; };
 		2437BB9A219EF06B00F62A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2437BB98219EF06B00F62A3C /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		2417985A21A1CD6000FF002D /* ChangeLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLocationViewController.swift; sourceTree = "<group>"; };
+		2417985F21A1DEF300FF002D /* DataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClient.swift; sourceTree = "<group>"; };
 		2437BB91219EF06B00F62A3C /* UdacityMapProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UdacityMapProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2437BB94219EF06B00F62A3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2437BB96219EF06B00F62A3C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 		2417985E21A1DBCD00FF002D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2417985F21A1DEF300FF002D /* DataClient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			files = (
 				2437BB97219EF06B00F62A3C /* MapViewController.swift in Sources */,
 				2437BB95219EF06B00F62A3C /* AppDelegate.swift in Sources */,
+				2417986021A1DEF300FF002D /* DataClient.swift in Sources */,
 				2437BBA8219EF12000F62A3C /* Constants.swift in Sources */,
 				2417985B21A1CD6000FF002D /* ChangeLocationViewController.swift in Sources */,
 			);
