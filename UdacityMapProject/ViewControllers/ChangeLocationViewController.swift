@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
 class ChangeLocationViewController: UIViewController, UITextFieldDelegate {
 
+    let locationManager = CLLocationManager()
+    
     @IBOutlet weak var LocationTextField: UITextField!
 
     
@@ -18,6 +21,11 @@ class ChangeLocationViewController: UIViewController, UITextFieldDelegate {
         view.backgroundColor = UIColor.clear
         view.isOpaque = false
         self.LocationTextField.delegate =  self
+        
+        locationManager.delegate = self as? CLLocationManagerDelegate
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
     }
     
     @IBAction func BackButton(_ sender: Any) {
@@ -34,5 +42,25 @@ class ChangeLocationViewController: UIViewController, UITextFieldDelegate {
             LocationTextField.resignFirstResponder()
             dismiss(animated: true, completion: nil)
         }
+    }
+}
+
+extension ChangeLocationViewController : CLLocationManagerDelegate {
+  //https://www.thorntech.com/2016/01/how-to-search-for-location-using-apples-mapkit/
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.requestLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print("location:: \(location)")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error:: \(error)")
     }
 }

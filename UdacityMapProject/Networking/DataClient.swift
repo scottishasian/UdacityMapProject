@@ -12,9 +12,21 @@ class DataClient: NSObject {
     
     var session = URLSession.shared
     
+    // authentication state
+    var sessionID : String? = nil
+    
+    override init() {
+        super.init()
+    }
+    
     func taskForGetMethod(_ method: String, parameters: [String:AnyObject], apiType: APIType = .udacityAPI, completionHandlerForGET: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionDataTask {
         
         let request = NSMutableURLRequest(url: urlFromParameters(parameters, withPathExtension: method, apiType:  apiType))
+        
+        if apiType == .parseAPI {
+            request.addValue(Constants.ParseParameterValues.restAPIKey, forHTTPHeaderField: Constants.ParseParameterKeys.restAPIKey)
+            request.addValue(Constants.ParseParameterValues.parseID, forHTTPHeaderField: Constants.ParseParameterKeys.parseID)
+        }
         
         let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
             
@@ -51,13 +63,19 @@ class DataClient: NSObject {
         return task
     }
     
-    func taskForPostMethod(_ method: String, parameters: [String:AnyObject], jsonBody: String, apiType: APIType = .udacityAPI, completionHandlerForPOST: @escaping(_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask{
+    func taskForPostMethod(_ method: String, parameters: [String:AnyObject], requestHeader : [String:AnyObject]? = nil, jsonBody: String, apiType: APIType = .udacityAPI, completionHandlerForPOST: @escaping(_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask{
         
         let request = NSMutableURLRequest(url: urlFromParameters(parameters, withPathExtension: method, apiType:  apiType))
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = jsonBody.data(using: String.Encoding.utf8)
+        
+        if let headerParameter = requestHeader {
+            for(key, value) in headerParameter {
+                request.addValue("\(value)", forHTTPHeaderField: key)
+            }
+        }
         
         let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
             
@@ -78,7 +96,15 @@ class DataClient: NSObject {
                 sendError("No data was returned by the request!")
                 return
             }
-            self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHandlerForPOST)
+            
+            // skipping the first 5 characters for Udacity API calls
+            var newData = data
+            if apiType == .udacityAPI {
+                let range = Range(5..<data.count)
+                newData = data.subdata(in: range)
+            }
+            
+            completionHandlerForPOST(newData as AnyObject, nil)
         }
         task.resume()
         return task
@@ -119,6 +145,53 @@ class DataClient: NSObject {
             }
             self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHandlerForPUT)
         }
+        task.resume()
+        return task
+    }
+    
+    func taskForDeleteMethod(_ method: String, parameters: [String:AnyObject], apiType: APIType = .udacityAPI, completionHandlerForDELETE: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionDataTask {
+        
+        let request = NSMutableURLRequest(url: urlFromParameters(parameters, withPathExtension: method, apiType:  apiType))
+        request.httpMethod = "DELETE"
+        
+        var xsrfCookie: HTTPCookie? = nil
+        let sharedCookieStorage = HTTPCookieStorage.shared
+        for cookie in sharedCookieStorage.cookies! {
+            if cookie.name == "XSRF-TOKEN" { xsrfCookie = cookie }
+        }
+        if let xsrfCookie = xsrfCookie {
+            request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
+        }
+        
+        let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
+            
+            func sendError(_ error: String) {
+                print(error)
+                let userInfo = [NSLocalizedDescriptionKey : error]
+                completionHandlerForDELETE(nil, NSError(domain: "taskForGETMethod", code: 1, userInfo: userInfo))
+            }
+            guard (error == nil) else {
+                sendError("There was an error with your request: \(error!)")
+                return
+            }
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+                sendError("Your request returned a status code other than 2xx!")
+                return
+            }
+            guard let data = data else {
+                sendError("No data was returned by the request!")
+                return
+            }
+            
+            var newData = data
+            if apiType == .udacityAPI {
+                let range = Range(5..<data.count)
+                newData = data.subdata(in: range)
+            }
+            
+            completionHandlerForDELETE(newData as AnyObject, nil)
+        }
+        
         task.resume()
         return task
     }
