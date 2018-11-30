@@ -51,6 +51,78 @@ class DataClient: NSObject {
         return task
     }
     
+    func taskForPostMethod(_ method: String, parameters: [String:AnyObject], jsonBody: String, apiType: APIType = .udacityAPI, completionHandlerForPOST: @escaping(_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask{
+        
+        let request = NSMutableURLRequest(url: urlFromParameters(parameters, withPathExtension: method, apiType:  apiType))
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonBody.data(using: String.Encoding.utf8)
+        
+        let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
+            
+            func sendError(_ error: String) {
+                print(error)
+                let userInfo = [NSLocalizedDescriptionKey : error]
+                completionHandlerForPOST(nil, NSError(domain: "taskForGETMethod", code: 1, userInfo: userInfo))
+            }
+            guard (error == nil) else {
+                sendError("There was an error with your request: \(error!)")
+                return
+            }
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+                sendError("Your request returned a status code other than 2xx!")
+                return
+            }
+            guard let data = data else {
+                sendError("No data was returned by the request!")
+                return
+            }
+            self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHandlerForPOST)
+        }
+        task.resume()
+        return task
+    }
+    
+    func taskForPutMethod(_ method: String, parameters: [String:AnyObject], requestHeader : [String:AnyObject]? = nil, jsonBody: String, apiType: APIType = .udacityAPI, completionHandlerForPUT: @escaping(_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask{
+        
+        let request = NSMutableURLRequest(url: urlFromParameters(parameters, withPathExtension: method, apiType:  apiType))
+        request.httpMethod = "PUT"
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonBody.data(using: String.Encoding.utf8)
+        
+        if let headerParameter = requestHeader {
+            for(key, value) in headerParameter {
+                request.addValue("\(value)", forHTTPHeaderField: key)
+            }
+        }
+        
+        let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
+            
+            func sendError(_ error: String) {
+                print(error)
+                let userInfo = [NSLocalizedDescriptionKey : error]
+                completionHandlerForPUT(nil, NSError(domain: "taskForGETMethod", code: 1, userInfo: userInfo))
+            }
+            guard (error == nil) else {
+                sendError("There was an error with your request: \(error!)")
+                return
+            }
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+                sendError("Your request returned a status code other than 2xx!")
+                return
+            }
+            guard let data = data else {
+                sendError("No data was returned by the request!")
+                return
+            }
+            self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHandlerForPUT)
+        }
+        task.resume()
+        return task
+    }
+    
     private func convertDataWithCompletionHandler(_ data: Data, completionHandlerForConvertData: (_ result: AnyObject?, _ error: NSError?) -> Void) {
         
         var parsedResult: AnyObject! = nil

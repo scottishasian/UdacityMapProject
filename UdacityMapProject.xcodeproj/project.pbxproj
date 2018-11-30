@@ -41,12 +41,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2417985E21A1DBCD00FF002D /* Models */ = {
+		2417985E21A1DBCD00FF002D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				2417985F21A1DEF300FF002D /* DataClient.swift */,
 			);
-			path = Models;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		241AFAE5219F1B3000FEA204 /* ViewControllers */ = {
@@ -77,7 +77,7 @@
 		2437BB93219EF06B00F62A3C /* UdacityMapProject */ = {
 			isa = PBXGroup;
 			children = (
-				2417985E21A1DBCD00FF002D /* Models */,
+				2417985E21A1DBCD00FF002D /* Networking */,
 				241AFAE5219F1B3000FEA204 /* ViewControllers */,
 				2437BBA6219EF10B00F62A3C /* Constants */,
 				2437BB94219EF06B00F62A3C /* AppDelegate.swift */,

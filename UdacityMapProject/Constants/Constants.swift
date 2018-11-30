@@ -10,10 +10,6 @@ import Foundation
 
 struct Constants {
     
-    static let parseID = "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr"
-    static let restAPIKey = "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
-    //static let allLocations = "https://parse.udacity.com/parse/classes/StudentLocation"
-
     struct Udacity {
         static let APIScheme = "https"
         static let APIHost = "www.udacity.com"
@@ -27,6 +23,18 @@ struct Constants {
     }
     
     struct ParseMethods {
-        static let studentLocations = "/classes/StudentLocations"
+        static let studentLocations = "/classes/StudentLocation"
+    }
+    
+    struct ParseParameterKeys {
+        static let Where = "where"
+        static let restAPIKey = "X-Parse-REST-API-Key"
+        static let parstID = "X-Parse-Application-Id"
+    }
+    
+    struct ParseParameterValues {
+        static let parseID = "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr"
+        static let restAPIKey = "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
+        //static let allLocations = "https://parse.udacity.com/parse/classes/StudentLocation"
     }
 }
