@@ -52,12 +52,14 @@ extension ChangeLocationViewController : CLLocationManagerDelegate {
         if status == .authorizedWhenInUse {
             locationManager.requestLocation()
         }
+        //Called when permission dialog is interacted with.
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             print("location:: \(location)")
         }
+        //triggered when location information is recieved.
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

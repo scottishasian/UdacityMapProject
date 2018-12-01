@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uyd-ym-teE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,47 +11,92 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Item 2-->
+        <scene sceneID="nWr-wp-G7i">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController id="BYZ-38-t0r" userLabel="Map View Controller" customClass="MapViewController" customModule="UdacityMapProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="p8z-fN-JYq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mUM-ok-Afa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="dNF-5F-Iwq"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="qys-cw-zrd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WYq-aC-f6a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904" y="1253"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="kyU-ZG-ItD">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bv7-kM-pkq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="MapView" id="KtN-jh-3Nu" customClass="MapViewController" customModule="UdacityMapProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KKC-pz-6W0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XWr-ov-XMz">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="10" width="375" height="647"/>
                                 <subviews>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFL-fq-AkE">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <items>
+                                            <navigationItem title="OnTheMap" id="F5J-6U-GGT">
+                                                <barButtonItem key="leftBarButtonItem" title="Item" id="tmE-sc-Och"/>
+                                                <barButtonItem key="rightBarButtonItem" title="Change" id="YkF-Ta-UXV">
+                                                    <connections>
+                                                        <segue destination="9Ca-FJ-Ze8" kind="presentation" modalPresentationStyle="overFullScreen" id="OyL-JT-B2t"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RzK-oq-We1">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                        <rect key="frame" x="0.0" y="44" width="375" height="603"/>
                                     </mapView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncV-4z-Gz2">
-                                        <rect key="frame" x="0.0" y="617" width="375" height="30"/>
-                                        <state key="normal" title="Change Location"/>
-                                        <connections>
-                                            <segue destination="9Ca-FJ-Ze8" kind="presentation" modalPresentationStyle="overCurrentContext" id="nva-qH-hxD"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="RzK-oq-We1" secondAttribute="trailing" id="Pfb-Tt-mDa"/>
+                                    <constraint firstItem="RzK-oq-We1" firstAttribute="leading" secondItem="XWr-ov-XMz" secondAttribute="leading" id="XJ1-tF-GEF"/>
+                                    <constraint firstAttribute="bottom" secondItem="RzK-oq-We1" secondAttribute="bottom" id="bIO-TX-lYz"/>
+                                </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="XWr-ov-XMz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="DQ0-xR-Yvd"/>
-                            <constraint firstItem="XWr-ov-XMz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="e3E-o9-OCu"/>
-                            <constraint firstItem="XWr-ov-XMz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qIh-gh-KE2"/>
-                            <constraint firstAttribute="trailing" secondItem="XWr-ov-XMz" secondAttribute="trailing" id="xdQ-PX-w1R"/>
+                            <constraint firstItem="XWr-ov-XMz" firstAttribute="leading" secondItem="KKC-pz-6W0" secondAttribute="leading" id="Njb-9z-W7t"/>
+                            <constraint firstAttribute="trailing" secondItem="XWr-ov-XMz" secondAttribute="trailing" id="RNZ-qQ-6GM"/>
+                            <constraint firstItem="XWr-ov-XMz" firstAttribute="top" secondItem="KKC-pz-6W0" secondAttribute="topMargin" constant="-10" id="cBJ-sq-nzj"/>
+                            <constraint firstItem="XWr-ov-XMz" firstAttribute="centerY" secondItem="KKC-pz-6W0" secondAttribute="centerY" id="pSG-A7-7F3"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="6qA-mS-YPh"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="ztC-sP-BpJ"/>
                     <connections>
-                        <outlet property="ChangeLocationButton" destination="ncV-4z-Gz2" id="7H5-EI-zIC"/>
-                        <outlet property="mapView" destination="RzK-oq-We1" id="ten-zr-AnW"/>
+                        <outlet property="mapView" destination="RzK-oq-We1" id="OPR-uZ-co5"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="904" y="588"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Jwl-QK-qft">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rid-Nz-PI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController id="Uyd-ym-teE" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UAf-2s-W9i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="KtN-jh-3Nu" kind="relationship" relationship="viewControllers" id="sSh-Ib-tT0"/>
+                        <segue destination="p8z-fN-JYq" kind="relationship" relationship="viewControllers" id="R7m-68-mW2"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="-45" y="919"/>
         </scene>
         <!--Change Location View Controller-->
         <scene sceneID="nc4-lc-vD8">
@@ -121,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7X-Hb-adF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="890.39999999999998" y="117.39130434782609"/>
+            <point key="canvasLocation" x="1818" y="169"/>
         </scene>
     </scenes>
 </document>
