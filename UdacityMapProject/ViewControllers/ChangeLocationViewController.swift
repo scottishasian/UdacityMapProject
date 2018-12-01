@@ -11,10 +11,9 @@ import MapKit
 
 class ChangeLocationViewController: UIViewController, UITextFieldDelegate {
 
-    let locationManager = CLLocationManager()
-    
     @IBOutlet weak var LocationTextField: UITextField!
 
+    var resultSearchController:UISearchController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +21,9 @@ class ChangeLocationViewController: UIViewController, UITextFieldDelegate {
         view.isOpaque = false
         self.LocationTextField.delegate =  self
         
-        locationManager.delegate = self as? CLLocationManagerDelegate
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "ChangeLocationController") as! ChangeLocationViewController
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
     }
     
     @IBAction func BackButton(_ sender: Any) {
@@ -43,26 +41,18 @@ class ChangeLocationViewController: UIViewController, UITextFieldDelegate {
             dismiss(animated: true, completion: nil)
         }
     }
+    
+    
+    @IBAction func CurrentLocationButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
-extension ChangeLocationViewController : CLLocationManagerDelegate {
-  //https://www.thorntech.com/2016/01/how-to-search-for-location-using-apples-mapkit/
+extension ChangeLocationViewController : UISearchResultsUpdating {
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
-            locationManager.requestLocation()
-        }
-        //Called when permission dialog is interacted with.
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            print("location:: \(location)")
-        }
-        //triggered when location information is recieved.
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("error:: \(error)")
+    func updateSearchResults(for searchController: UISearchController) {
+        print("hello")
     }
 }
+
+

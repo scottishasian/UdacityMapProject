@@ -11,6 +11,7 @@ import MapKit
 
 class MapViewController: UIViewController {
 
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var ChangeLocationButton: UIButton!
@@ -20,22 +21,39 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Edinburgh
-        let initialLocation = CLLocation(latitude: 55.9533, longitude: -3.1883)
-        centreMapOnLocation(location: initialLocation)
         
-//        if self.presentedViewController != nil{
-//            ChangeLocationButton.isHidden = false
-//        }
-        //Hide change location button if modal is open
+        locationManager.delegate = self as? CLLocationManagerDelegate
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+ 
     }
 
+}
 
-    func centreMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
-        //location is the centre point.
-        mapView.setRegion(coordinateRegion, animated: true)
+extension MapViewController : CLLocationManagerDelegate {
+    //https://www.thorntech.com/2016/01/how-to-search-for-location-using-apples-mapkit/
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.requestLocation()
+        }
+        //Called when permission dialog is interacted with.
     }
-
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print("location:: \(location)")
+            let span = MKCoordinateSpanMake(0.05, 0.05)
+            let region = MKCoordinateRegion(center: location.coordinate, span: span)
+            mapView.setRegion(region, animated: true)
+            
+        }
+        //triggered when location information is recieved.
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error:: \(error)")
+    }
 }
 
