@@ -42,6 +42,10 @@ struct Constants {
         static let SessionAuth = "/session"
     }
     
+    struct ErrorMessages {
+        static let loginError = "Unable to login"
+    }
+    
     //Parsing session data
     
     struct UserSession: Codable {

@@ -17,6 +17,7 @@
 		2437BB9F219EF06D00F62A3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2437BB9D219EF06D00F62A3C /* LaunchScreen.storyboard */; };
 		2437BBA8219EF12000F62A3C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BBA7219EF12000F62A3C /* Constants.swift */; };
 		2455D06F21B53376000F351A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455D06E21B53376000F351A /* LoginViewController.swift */; };
+		2455D07121B54C58000F351A /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455D07021B54C58000F351A /* GCDBlackBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2437BBA0219EF06D00F62A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2437BBA7219EF12000F62A3C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2455D06E21B53376000F351A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2455D07021B54C58000F351A /* GCDBlackBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				241AFAE5219F1B3000FEA204 /* ViewControllers */,
 				2437BBA6219EF10B00F62A3C /* Constants */,
 				2437BB94219EF06B00F62A3C /* AppDelegate.swift */,
+				2455D07021B54C58000F351A /* GCDBlackBox.swift */,
 				2437BB98219EF06B00F62A3C /* Main.storyboard */,
 				2437BB9B219EF06D00F62A3C /* Assets.xcassets */,
 				2437BB9D219EF06D00F62A3C /* LaunchScreen.storyboard */,
@@ -174,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2455D07121B54C58000F351A /* GCDBlackBox.swift in Sources */,
 				2455D06F21B53376000F351A /* LoginViewController.swift in Sources */,
 				2437BB97219EF06B00F62A3C /* MapViewController.swift in Sources */,
 				24286DBB21B2E98B008905DD /* Convenience.swift in Sources */,

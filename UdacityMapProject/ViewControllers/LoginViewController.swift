@@ -13,11 +13,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var UserNameTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
     @IBOutlet weak var LoginButton: UIButton!
+    @IBOutlet weak var LoadingIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         UserNameTextField.delegate = self
         PasswordTextField.delegate = self
+        LoadingIndicator.isHidden = true
 
         // Do any additional setup after loading the view.
     }
@@ -32,6 +34,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let password = PasswordTextField.text
         
         if username != "" && password != "" {
+            LoadingIndicator.isHidden = false
+            self.LoadingIndicator.startAnimating()
             logUserIn(userName: username!, password: password!)
             print("Can log in")
         } else {
@@ -39,7 +43,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func logUserIn(userName : String, password : String) {
-        
+    private func logUserIn(userName : String, password : String) {
+        DataClient.sharedInstance().authenticateUser(username: userName, password: password) {(success, error) in
+            if success {
+                performUIUpdatesOnMain {
+                    self.UserNameTextField.text = ""
+                    self.PasswordTextField.text = ""
+                }
+                self.performSegue(withIdentifier: "logIntoMap", sender: nil)
+            } else {
+                performUIUpdatesOnMain {
+                    let loginAlert = UIAlertController(title: "Login Error", message: Constants.ErrorMessages.loginError, preferredStyle: UIAlertControllerStyle.alert)
+                    loginAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+                    self.present(loginAlert, animated: true, completion: nil)
+                    print(error ?? Constants.ErrorMessages.loginError)
+                }
+            }
+            performUIUpdatesOnMain {
+                self.LoadingIndicator.stopAnimating()
+            }
+        }
     }
 }

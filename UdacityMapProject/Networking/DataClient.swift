@@ -17,6 +17,15 @@ class DataClient: NSObject {
     var userKey = "" //Cannot be String as used as String.type
     var userName = ""
     
+    
+    //Need to make this class a shared instance to be used in the login controller.
+    class func sharedInstance() -> DataClient {
+        struct SingletonClass {
+            static var sharedInstance = DataClient()
+        }
+        return SingletonClass.sharedInstance
+    }
+    
     override init() {
         super.init()
     }
