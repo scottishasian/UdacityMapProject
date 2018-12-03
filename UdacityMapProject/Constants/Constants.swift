@@ -41,4 +41,21 @@ struct Constants {
     struct UdacityMethods {
         static let SessionAuth = "/session"
     }
+    
+    //Parsing session data
+    
+    struct UserSession: Codable {
+        let account: Account?
+        let session: Session?
+    }
+    
+    struct Session: Codable {
+        let id: String
+        let expiration: String
+    }
+    
+    struct Account: Codable {
+        let registered: Bool
+        let key: String
+    }
 }

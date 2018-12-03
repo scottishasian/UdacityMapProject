@@ -14,6 +14,8 @@ class DataClient: NSObject {
     
     // authentication state
     var sessionID : String? = nil
+    var userKey = "" //Cannot be String as used as String.type
+    var userName = ""
     
     override init() {
         super.init()

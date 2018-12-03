@@ -9,17 +9,20 @@
 /* Begin PBXBuildFile section */
 		2417985B21A1CD6000FF002D /* ChangeLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417985A21A1CD6000FF002D /* ChangeLocationViewController.swift */; };
 		2417986021A1DEF300FF002D /* DataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417985F21A1DEF300FF002D /* DataClient.swift */; };
+		24286DBB21B2E98B008905DD /* Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24286DBA21B2E98B008905DD /* Convenience.swift */; };
 		2437BB95219EF06B00F62A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BB94219EF06B00F62A3C /* AppDelegate.swift */; };
 		2437BB97219EF06B00F62A3C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BB96219EF06B00F62A3C /* MapViewController.swift */; };
 		2437BB9A219EF06B00F62A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2437BB98219EF06B00F62A3C /* Main.storyboard */; };
 		2437BB9C219EF06D00F62A3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2437BB9B219EF06D00F62A3C /* Assets.xcassets */; };
 		2437BB9F219EF06D00F62A3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2437BB9D219EF06D00F62A3C /* LaunchScreen.storyboard */; };
 		2437BBA8219EF12000F62A3C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BBA7219EF12000F62A3C /* Constants.swift */; };
+		2455D06F21B53376000F351A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455D06E21B53376000F351A /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2417985A21A1CD6000FF002D /* ChangeLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLocationViewController.swift; sourceTree = "<group>"; };
 		2417985F21A1DEF300FF002D /* DataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClient.swift; sourceTree = "<group>"; };
+		24286DBA21B2E98B008905DD /* Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convenience.swift; sourceTree = "<group>"; };
 		2437BB91219EF06B00F62A3C /* UdacityMapProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UdacityMapProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2437BB94219EF06B00F62A3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2437BB96219EF06B00F62A3C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		2437BB9E219EF06D00F62A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2437BBA0219EF06D00F62A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2437BBA7219EF12000F62A3C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2455D06E21B53376000F351A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				2417985F21A1DEF300FF002D /* DataClient.swift */,
+				24286DBA21B2E98B008905DD /* Convenience.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -54,6 +59,7 @@
 			children = (
 				2437BB96219EF06B00F62A3C /* MapViewController.swift */,
 				2417985A21A1CD6000FF002D /* ChangeLocationViewController.swift */,
+				2455D06E21B53376000F351A /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -168,7 +174,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2455D06F21B53376000F351A /* LoginViewController.swift in Sources */,
 				2437BB97219EF06B00F62A3C /* MapViewController.swift in Sources */,
+				24286DBB21B2E98B008905DD /* Convenience.swift in Sources */,
 				2437BB95219EF06B00F62A3C /* AppDelegate.swift in Sources */,
 				2417986021A1DEF300FF002D /* DataClient.swift in Sources */,
 				2437BBA8219EF12000F62A3C /* Constants.swift in Sources */,
