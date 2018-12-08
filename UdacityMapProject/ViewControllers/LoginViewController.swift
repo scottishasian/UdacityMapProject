@@ -45,7 +45,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     self.UserNameTextField.text = ""
                     self.PasswordTextField.text = ""
                 }
-                self.performSegue(withIdentifier: "logIntoMap", sender: nil)
+                //self.performSegue(withIdentifier: "logIntoMap", sender: nil)
+                let controller = self.storyboard!.instantiateViewController(withIdentifier: "AppEntranceController") as! UINavigationController
+                self.present(controller, animated: true, completion: nil)
             } else {
                 performUIUpdatesOnMain {
                     let loginAlert = UIAlertController(title: "Login Error", message: Constants.ErrorMessages.loginError, preferredStyle: UIAlertControllerStyle.alert)

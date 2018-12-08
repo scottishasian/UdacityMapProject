@@ -231,7 +231,7 @@ class DataClient: NSObject {
         var components = URLComponents()
         components.scheme = apiType == .udacityAPI ? Constants.Udacity.APIScheme : Constants.Parse.APIScheme
         //if the apiType is not the udacityAPI then use the Parse API
-        components.host = apiType == .udacityAPI ? Constants.Udacity.APIScheme : Constants.Parse.APIHost
+        components.host = apiType == .udacityAPI ? Constants.Udacity.APIHost : Constants.Parse.APIHost
         components.path = (apiType == .udacityAPI ? Constants.Udacity.APIPath : Constants.Parse.APIPath) + (withPathExtension ?? "")
         components.queryItems = [URLQueryItem]()
         

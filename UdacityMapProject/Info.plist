@@ -24,6 +24,8 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>For a tutorial</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>For a tutorial</string>
 	<key>NSAppTransportSecurity</key>
