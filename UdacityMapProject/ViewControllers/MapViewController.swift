@@ -8,8 +8,9 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class MapViewController: UIViewController {
+class MapViewController: BaseMapViewController {
 
     let locationManager = CLLocationManager()
     
@@ -26,7 +27,16 @@ class MapViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
+        mapView.delegate = self
  
+    }
+    
+    func showStudentsLocations() {
+        
+    }
+    
+    func loadUserLocaton() {
+        _ = DataClient.sharedInstance()
     }
 
 }

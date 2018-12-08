@@ -10,6 +10,9 @@
 		2417985B21A1CD6000FF002D /* ChangeLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417985A21A1CD6000FF002D /* ChangeLocationViewController.swift */; };
 		2417986021A1DEF300FF002D /* DataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417985F21A1DEF300FF002D /* DataClient.swift */; };
 		24286DBB21B2E98B008905DD /* Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24286DBA21B2E98B008905DD /* Convenience.swift */; };
+		242A476D21BBE9500056B7A5 /* BaseMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242A476C21BBE9500056B7A5 /* BaseMapViewController.swift */; };
+		242A476F21BBEDAC0056B7A5 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242A476E21BBEDAC0056B7A5 /* UserInformation.swift */; };
+		242A477121BBEDDD0056B7A5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242A477021BBEDDD0056B7A5 /* User.swift */; };
 		2437BB95219EF06B00F62A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BB94219EF06B00F62A3C /* AppDelegate.swift */; };
 		2437BB97219EF06B00F62A3C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437BB96219EF06B00F62A3C /* MapViewController.swift */; };
 		2437BB9A219EF06B00F62A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2437BB98219EF06B00F62A3C /* Main.storyboard */; };
@@ -24,6 +27,9 @@
 		2417985A21A1CD6000FF002D /* ChangeLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLocationViewController.swift; sourceTree = "<group>"; };
 		2417985F21A1DEF300FF002D /* DataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClient.swift; sourceTree = "<group>"; };
 		24286DBA21B2E98B008905DD /* Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convenience.swift; sourceTree = "<group>"; };
+		242A476C21BBE9500056B7A5 /* BaseMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMapViewController.swift; sourceTree = "<group>"; };
+		242A476E21BBEDAC0056B7A5 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
+		242A477021BBEDDD0056B7A5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2437BB91219EF06B00F62A3C /* UdacityMapProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UdacityMapProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2437BB94219EF06B00F62A3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2437BB96219EF06B00F62A3C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +68,7 @@
 				2437BB96219EF06B00F62A3C /* MapViewController.swift */,
 				2417985A21A1CD6000FF002D /* ChangeLocationViewController.swift */,
 				2455D06E21B53376000F351A /* LoginViewController.swift */,
+				242A476C21BBE9500056B7A5 /* BaseMapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -102,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				2437BBA7219EF12000F62A3C /* Constants.swift */,
+				242A476E21BBEDAC0056B7A5 /* UserInformation.swift */,
+				242A477021BBEDDD0056B7A5 /* User.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -180,11 +189,14 @@
 				2455D07121B54C58000F351A /* GCDBlackBox.swift in Sources */,
 				2455D06F21B53376000F351A /* LoginViewController.swift in Sources */,
 				2437BB97219EF06B00F62A3C /* MapViewController.swift in Sources */,
+				242A476D21BBE9500056B7A5 /* BaseMapViewController.swift in Sources */,
 				24286DBB21B2E98B008905DD /* Convenience.swift in Sources */,
+				242A476F21BBEDAC0056B7A5 /* UserInformation.swift in Sources */,
 				2437BB95219EF06B00F62A3C /* AppDelegate.swift in Sources */,
 				2417986021A1DEF300FF002D /* DataClient.swift in Sources */,
 				2437BBA8219EF12000F62A3C /* Constants.swift in Sources */,
 				2417985B21A1CD6000FF002D /* ChangeLocationViewController.swift in Sources */,
+				242A477121BBEDDD0056B7A5 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

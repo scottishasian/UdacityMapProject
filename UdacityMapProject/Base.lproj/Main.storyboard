@@ -11,36 +11,53 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List View Controller-->
-        <scene sceneID="pbA-0F-C69">
+        <!--Title-->
+        <scene sceneID="qIB-Tf-58s">
             <objects>
-                <tableViewController id="M77-mx-oHV" userLabel="List View Controller" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bdc-Ka-HHQ">
+                <tableViewController id="IAh-ao-5aW" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SPS-mB-utr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Wbx-1e-S3N">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Han-tL-gef">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wbx-1e-S3N" id="Hp8-7e-jbg">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Han-tL-gef" id="TFS-zg-DfK">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="M77-mx-oHV" id="bWc-3v-vcS"/>
-                            <outlet property="delegate" destination="M77-mx-oHV" id="VpT-wr-9Cx"/>
+                            <outlet property="dataSource" destination="IAh-ao-5aW" id="peh-k2-sTh"/>
+                            <outlet property="delegate" destination="IAh-ao-5aW" id="B9X-e5-fSi"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="XGC-9k-tuj"/>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="IWl-kM-yYK"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" title="Title" id="KoG-EL-xg2">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="aZt-bH-SyZ"/>
+                    </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QWI-K9-dxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cVt-ED-4dl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="1287"/>
+            <point key="canvasLocation" x="1876" y="1316"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="2ia-mO-ydr">
+            <objects>
+                <navigationController id="6hF-wn-VZY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Nfm-rA-w5o"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3R6-aH-ERq">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="IAh-ao-5aW" kind="relationship" relationship="rootViewController" id="Csl-wP-u8t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u16-oi-BZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="903" y="1317"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="kyU-ZG-ItD">
@@ -74,7 +91,7 @@
                         <viewLayoutGuide key="safeArea" id="6qA-mS-YPh"/>
                     </view>
                     <navigationItem key="navigationItem" id="OwP-Xc-l3E">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="tmE-sc-Och"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="tmE-sc-Och"/>
                         <barButtonItem key="rightBarButtonItem" title="Change" id="YkF-Ta-UXV">
                             <connections>
                                 <segue destination="9Ca-FJ-Ze8" kind="presentation" modalPresentationStyle="overFullScreen" id="OyL-JT-B2t"/>
@@ -92,6 +109,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Jwl-QK-qft">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rid-Nz-PI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="Uyd-ym-teE" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UAf-2s-W9i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -100,10 +118,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="3ck-d6-MH8" kind="relationship" relationship="viewControllers" id="sSh-Ib-tT0"/>
-                        <segue destination="M77-mx-oHV" kind="relationship" relationship="viewControllers" id="Hc3-Az-l0I"/>
+                        <segue destination="6hF-wn-VZY" kind="relationship" relationship="viewControllers" id="Hiq-vU-Tx9"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rid-Nz-PI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-45" y="919"/>
         </scene>
@@ -229,6 +246,12 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Egm-DR-dKr" firstAttribute="top" secondItem="CGN-gV-rHR" secondAttribute="bottom" constant="14" id="GVg-vc-ciz"/>
+                                    <constraint firstAttribute="bottom" secondItem="Egm-DR-dKr" secondAttribute="bottom" id="Zcf-F6-2cy"/>
+                                    <constraint firstAttribute="trailing" secondItem="Egm-DR-dKr" secondAttribute="trailing" id="c9G-Sp-e94"/>
+                                    <constraint firstItem="Egm-DR-dKr" firstAttribute="leading" secondItem="BiD-67-DMn" secondAttribute="leading" id="hAi-a2-6WA"/>
+                                </constraints>
                             </stackView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IrS-Md-hS7">
                                 <rect key="frame" x="177" y="315" width="20" height="20"/>
@@ -257,7 +280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhj-Fl-ebY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-866.39999999999998" y="918.89055472263874"/>
+            <point key="canvasLocation" x="-1103" y="644"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="Eyk-Dk-cwV">

@@ -40,6 +40,7 @@ struct Constants {
     
     struct UdacityMethods {
         static let SessionAuth = "/session"
+        static let Users = "/users"
     }
     
     struct ErrorMessages {
@@ -62,4 +63,5 @@ struct Constants {
         let registered: Bool
         let key: String
     }
+    
 }

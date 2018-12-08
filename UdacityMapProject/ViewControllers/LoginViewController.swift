@@ -23,11 +23,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func pressLoginButton(_ sender: Any) {
         let username = UserNameTextField.text
@@ -56,6 +51,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     let loginAlert = UIAlertController(title: "Login Error", message: Constants.ErrorMessages.loginError, preferredStyle: UIAlertControllerStyle.alert)
                     loginAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
                     self.present(loginAlert, animated: true, completion: nil)
+                    self.LoadingIndicator.isHidden = true
                     print(error ?? Constants.ErrorMessages.loginError)
                 }
             }

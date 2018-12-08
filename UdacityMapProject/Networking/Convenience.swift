@@ -14,7 +14,7 @@ extension DataClient {
         let jsonBody = "{\"udacity\": {\"username\": \"\(username)\", \"password\": \"\(password)\"}}"
         
         //Make the request
-        let _ = taskForPostMethod(Constants.UdacityMethods.SessionAuth, parameters: [:], jsonBody: jsonBody, completionHandlerForPOST: {(data, error) in
+            _ = taskForPostMethod(Constants.UdacityMethods.SessionAuth, parameters: [:], jsonBody: jsonBody, completionHandlerForPOST: {(data, error) in
             
             if let error = error {
                 print(error)
@@ -55,7 +55,39 @@ extension DataClient {
         return locations
     }
     
+    func userInformation(completionHandler: @escaping (_ result: UserInfo?, _ error: NSError?) -> Void) {
+        
+        let url = Constants.UdacityMethods.Users + "/\(userKey)"
+        
+        _ = taskForGetMethod(url, parameters: [:], completionHandlerForGET: {(data, error) in
+            if let error = error {
+                print(error)
+                completionHandler(nil, error)
+            } else {
+                let response = self.parseStudentInformation(data: data as? Data)
+                if let information = response.0 {
+                    completionHandler(information, nil)
+                } else {
+                    completionHandler(nil, response.1)
+                }
+            }
+        })
+    }
     
+    func parseStudentInformation(data: Data?) -> (UserInfo?, NSError?) {
+        var dataResponse: (studentInfo: UserInfo?, error: NSError?) = (nil, nil)
+        do {
+            if let data = data {
+                let jsonDecoder = JSONDecoder()
+                dataResponse.studentInfo = try jsonDecoder.decode(UserInfo.self, from: data)
+            }
+        } catch {
+            print("Could not parse JSON data")
+            let userInformation = [NSLocalizedDescriptionKey: error]
+            dataResponse.error = NSError(domain: "parseStudentInformation", code: 1, userInfo: userInformation)
+        }
+        return dataResponse
+    }
     
     
     
