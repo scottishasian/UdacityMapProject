@@ -24,6 +24,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     @IBAction func pressLoginButton(_ sender: Any) {
         let username = UserNameTextField.text
         let password = PasswordTextField.text
@@ -32,10 +37,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             LoadingIndicator.isHidden = false
             self.LoadingIndicator.startAnimating()
             logUserIn(userName: username!, password: password!)
+            dismissKeyboard()
             print("Can log in")
         } else {
             print("Please type in a username or password")
         }
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     private func logUserIn(userName : String, password : String) {
@@ -45,14 +55,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     self.UserNameTextField.text = ""
                     self.PasswordTextField.text = ""
                 }
-                //self.performSegue(withIdentifier: "logIntoMap", sender: nil)
-                let controller = self.storyboard!.instantiateViewController(withIdentifier: "AppEntranceController") as! UINavigationController
+                let controller = self.storyboard!.instantiateViewController(withIdentifier: "AppEntranceController") as! UITabBarController
                 self.present(controller, animated: true, completion: nil)
             } else {
                 performUIUpdatesOnMain {
-                    let loginAlert = UIAlertController(title: "Login Error", message: Constants.ErrorMessages.loginError, preferredStyle: UIAlertControllerStyle.alert)
-                    loginAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
-                    self.present(loginAlert, animated: true, completion: nil)
+                    self.showInfo(withTitle: "Login Error", withMessage: error ?? "Error while performing login.")
                     self.LoadingIndicator.isHidden = true
                     print(error ?? Constants.ErrorMessages.loginError)
                 }
