@@ -33,10 +33,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let username = UserNameTextField.text
         let password = PasswordTextField.text
         
+        let defaults = UserDefaults.standard
+        
         if username != "" && password != "" {
             LoadingIndicator.isHidden = false
             self.LoadingIndicator.startAnimating()
             logUserIn(userName: username!, password: password!)
+            defaults.set(username, forKey: "username")
             dismissKeyboard()
             print("Can log in")
         } else {

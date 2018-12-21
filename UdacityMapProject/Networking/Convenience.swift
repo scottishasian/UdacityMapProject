@@ -40,6 +40,27 @@ extension DataClient {
         })
     }
     
+    func logoutUser(completionHandlerForLoggingOut: @escaping (_ success: Bool, _ error: Error?) -> Void) {
+        
+        _ = taskForDeleteMethod(Constants.UdacityMethods.SessionAuth, parameters: [:], completionHandlerForDELETE: { (data, error) in
+            if let error = error {
+                print(error)
+                completionHandlerForLoggingOut(false, error)
+            } else {
+                let sessionData = self.parseSessionData(data: data as? Data)
+                if let _ = sessionData.0 {
+                    self.userKey = ""
+                    self.sessionID = ""
+                    completionHandlerForLoggingOut(true, nil)
+                } else {
+                    completionHandlerForLoggingOut(false, sessionData.1!)
+                }
+            }
+            
+        })
+        
+    }
+    
     func parseSessionData(data: Data?) -> (Constants.UserSession?, NSError?) {
         var locations: (userSession: Constants.UserSession?, error: NSError?) = (nil, nil)
         do {

@@ -45,7 +45,6 @@
         <!--Navigation Controller-->
         <scene sceneID="2ia-mO-ydr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u16-oi-BZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="6hF-wn-VZY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="history" id="Nfm-rA-w5o"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3R6-aH-ERq">
@@ -56,6 +55,7 @@
                         <segue destination="IAh-ao-5aW" kind="relationship" relationship="rootViewController" id="Csl-wP-u8t"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u16-oi-BZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="903" y="1317"/>
         </scene>
@@ -91,7 +91,11 @@
                         <viewLayoutGuide key="safeArea" id="6qA-mS-YPh"/>
                     </view>
                     <navigationItem key="navigationItem" id="OwP-Xc-l3E">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="tmE-sc-Och"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="tmE-sc-Och">
+                            <connections>
+                                <action selector="logOut:" destination="KtN-jh-3Nu" id="1QW-4N-bVA"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Change" id="YkF-Ta-UXV">
                             <connections>
                                 <segue destination="9Ca-FJ-Ze8" kind="presentation" modalPresentationStyle="overFullScreen" id="OyL-JT-B2t"/>
@@ -109,7 +113,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Jwl-QK-qft">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rid-Nz-PI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="AppEntranceController" id="Uyd-ym-teE" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Yaj-pc-O3G"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="UAf-2s-W9i">
@@ -122,6 +125,7 @@
                         <segue destination="6hF-wn-VZY" kind="relationship" relationship="viewControllers" id="Hiq-vU-Tx9"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rid-Nz-PI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-45" y="919"/>
         </scene>
@@ -280,12 +284,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhj-Fl-ebY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2116" y="1008"/>
+            <point key="canvasLocation" x="-1015" y="773"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Eyk-Dk-cwV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kay-RS-nyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3ck-d6-MH8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="ztC-sP-BpJ"/>
                     <toolbarItems/>
@@ -298,6 +301,7 @@
                         <segue destination="KtN-jh-3Nu" kind="relationship" relationship="rootViewController" id="wZQ-kC-Duw"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kay-RS-nyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="903.20000000000005" y="587.85607196401804"/>
         </scene>
