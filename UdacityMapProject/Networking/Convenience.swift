@@ -76,7 +76,7 @@ extension DataClient {
         return locations
     }
     
-    func userInformation(completionHandler: @escaping (_ result: UserInfo?, _ error: NSError?) -> Void) {
+    func userInformation(completionHandler: @escaping (_ result: UserInformation?, _ error: NSError?) -> Void) {
         
         let url = Constants.UdacityMethods.Users + "/\(userKey)"
         
@@ -99,9 +99,9 @@ extension DataClient {
         
         var parsedResult: AnyObject! = nil
         do {
-            parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject?
+            parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
         } catch {
-            let userInformation = [NSLocalizedDescriptionKey : "Data could not be parsed"]
+            let userInformation = [NSLocalizedDescriptionKey : "Data could not be parsed: \(data)"]
             completionHandlerForConvertingData(nil, NSError(domain: "convertDataWithCompletionHandler", code: 1, userInfo: userInformation))
         }
         
@@ -207,12 +207,12 @@ extension DataClient {
     }
  
     
-    func parseStudentInformation(data: Data?) -> (UserInfo?, NSError?) {
-        var dataResponse: (studentInfo: UserInfo?, error: NSError?) = (nil, nil)
+    func parseStudentInformation(data: Data?) -> (UserInformation?, NSError?) {
+        var dataResponse: (studentInfo: UserInformation?, error: NSError?) = (nil, nil)
         do {
             if let data = data {
                 let jsonDecoder = JSONDecoder()
-                dataResponse.studentInfo = try jsonDecoder.decode(UserInfo.self, from: data)
+                dataResponse.studentInfo = try jsonDecoder.decode(UserInformation.self, from: data)
             }
         } catch {
             print("Could not parse JSON data")

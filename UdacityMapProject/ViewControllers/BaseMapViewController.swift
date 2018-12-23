@@ -42,16 +42,8 @@ class BaseMapViewController: UIViewController, MKMapViewDelegate {
                 print("No links")
                 return
             }
-            openWithSafari(link)
+            openLink(link)
         }
-    }
-    
-    func openWithSafari(_ url: String) {
-        guard let url = URL(string: url), UIApplication.shared.canOpenURL(url) else {
-            print("Invalid link.")
-            return
-        }
-        UIApplication.shared.open(url, options: [:])
     }
 
 }
