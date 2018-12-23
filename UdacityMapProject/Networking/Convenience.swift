@@ -95,6 +95,49 @@ extension DataClient {
         })
     }
     
+    private func convertDataWithCompletionHandler(_ data : Data, completionHandlerForConvertingData: (_ result: AnyObject?, _ error: NSError?) -> Void) {
+        
+        var parsedResult: AnyObject! = nil
+        do {
+            parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject?
+        } catch {
+            let userInformation = [NSLocalizedDescriptionKey : "Data could not be parsed"]
+            completionHandlerForConvertingData(nil, NSError(domain: "convertDataWithCompletionHandler", code: 1, userInfo: userInformation))
+        }
+        
+        completionHandlerForConvertingData(parsedResult, nil)
+
+    }
+    
+    //To fetch user loaction
+    func studentsDetails(completionHandler: @escaping (_ result: [StudentDetails]?, _ error: NSError?) -> Void) {
+        let parameters = [Constants.ParseParameterKeys.Order: "-updatedAt" as AnyObject]
+        _ = taskForGetMethod(Constants.ParseMethods.studentLocations, parameters: parameters, apiType: .parseAPI) { (data, error) in
+            if let error = error {
+                print(error)
+                completionHandler(nil, error)
+            } else {
+                if let data = data {
+                    self.convertDataWithCompletionHandler(data as! Data, completionHandlerForConvertingData: { (parsedJson, error) in
+                        var loggedInStudent = [StudentDetails]()
+                        if let results = parsedJson?[Constants.ParseJSONKeys.Results] as? [[String : AnyObject]] {
+                            for info in results {
+                                loggedInStudent.append(StudentDetails(info))
+                            }
+                            completionHandler(loggedInStudent, nil)
+                            return
+                        }
+                        let loggedInUser = [NSLocalizedDescriptionKey: "Data could not be parsed"]
+                        completionHandler(loggedInStudent, NSError(domain: "studentsDetails", code: 1, userInfo: loggedInUser))
+                    })
+                    
+                }
+            }
+            
+        }
+    }
+ 
+    
     func parseStudentInformation(data: Data?) -> (UserInfo?, NSError?) {
         var dataResponse: (studentInfo: UserInfo?, error: NSError?) = (nil, nil)
         do {

@@ -33,9 +33,16 @@ class MapViewController: BaseMapViewController {
  
     }
     
+    @objc func reloadMap() {
+        performUIUpdatesOnMain {
+            self.mapView.alpha = 1
+            self.showStudentsDetails(StudentsLocations.sharedData.studentsInformation)
+        }
+    }
+    
     //https://www.devfright.com/mkpointannotation-tutorial/
     //http://swiftdeveloperblog.com/code-examples/drop-a-mkpointannotation-pin-on-a-mapview-at-users-current-location/
-    func showStudentsLocations(_ studentsDetails: [StudentDetails]) {
+    func showStudentsDetails(_ studentsDetails: [StudentDetails]) {
         mapView.removeAnnotation(mapView.annotations as! MKAnnotation)
         for information in studentsDetails where information.latitude != 0 && information.longitude != 0 {
             let span = MKCoordinateSpanMake(0.05, 0.05)
@@ -48,6 +55,7 @@ class MapViewController: BaseMapViewController {
             mapView.addAnnotation(annotation)
             mapView.setRegion(region, animated: true)
         }
+        mapView.showAnnotations(mapView.annotations, animated: true)
     }
     
     func loadUserLocation() {
@@ -70,6 +78,7 @@ class MapViewController: BaseMapViewController {
             }
         }
     }
+    
     
     
 

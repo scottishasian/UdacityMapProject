@@ -45,6 +45,7 @@
         <!--Navigation Controller-->
         <scene sceneID="2ia-mO-ydr">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u16-oi-BZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="6hF-wn-VZY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="history" id="Nfm-rA-w5o"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3R6-aH-ERq">
@@ -55,7 +56,6 @@
                         <segue destination="IAh-ao-5aW" kind="relationship" relationship="rootViewController" id="Csl-wP-u8t"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u16-oi-BZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="903" y="1317"/>
         </scene>
@@ -110,10 +110,11 @@
             </objects>
             <point key="canvasLocation" x="1842.4000000000001" y="587.85607196401804"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--BaseUI View Controller-->
         <scene sceneID="Jwl-QK-qft">
             <objects>
-                <tabBarController storyboardIdentifier="AppEntranceController" id="Uyd-ym-teE" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rid-Nz-PI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController storyboardIdentifier="AppEntranceController" id="Uyd-ym-teE" customClass="BaseUIViewController" customModule="UdacityMapProject" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Yaj-pc-O3G"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="UAf-2s-W9i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -125,7 +126,6 @@
                         <segue destination="6hF-wn-VZY" kind="relationship" relationship="viewControllers" id="Hiq-vU-Tx9"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rid-Nz-PI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-45" y="919"/>
         </scene>
@@ -212,6 +212,32 @@
             </objects>
             <point key="canvasLocation" x="2756" y="168.6656671664168"/>
         </scene>
+        <!--Map Pin View Controller-->
+        <scene sceneID="PDC-21-afW">
+            <objects>
+                <viewController storyboardIdentifier="MapPinView" id="xph-aK-OlJ" customClass="MapPinViewController" customModule="UdacityMapProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yyy-8p-ocn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HFX-uf-bHT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HFX-uf-bHT" firstAttribute="top" secondItem="yyy-8p-ocn" secondAttribute="top" id="DSC-RB-z75"/>
+                            <constraint firstItem="HFX-uf-bHT" firstAttribute="bottom" secondItem="8br-CH-LDu" secondAttribute="bottom" id="UEr-Ca-fV6"/>
+                            <constraint firstItem="HFX-uf-bHT" firstAttribute="leading" secondItem="yyy-8p-ocn" secondAttribute="leading" id="gM3-u3-6yR"/>
+                            <constraint firstItem="HFX-uf-bHT" firstAttribute="trailing" secondItem="8br-CH-LDu" secondAttribute="trailing" id="nHP-ki-FN5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8br-CH-LDu"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="82w-4O-uzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3564" y="162.3688155922039"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="3gL-80-zoQ">
             <objects>
@@ -289,6 +315,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Eyk-Dk-cwV">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kay-RS-nyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3ck-d6-MH8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="ztC-sP-BpJ"/>
                     <toolbarItems/>
@@ -301,7 +328,6 @@
                         <segue destination="KtN-jh-3Nu" kind="relationship" relationship="rootViewController" id="wZQ-kC-Duw"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kay-RS-nyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="903.20000000000005" y="587.85607196401804"/>
         </scene>

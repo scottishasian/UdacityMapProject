@@ -15,11 +15,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var LoginButton: UIButton!
     @IBOutlet weak var LoadingIndicator: UIActivityIndicatorView!
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UserNameTextField.delegate = self
         PasswordTextField.delegate = self
         LoadingIndicator.isHidden = true
+        
+        UserNameTextField.text = defaults.string(forKey: "username")
 
         // Do any additional setup after loading the view.
     }
@@ -32,8 +36,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func pressLoginButton(_ sender: Any) {
         let username = UserNameTextField.text
         let password = PasswordTextField.text
-        
-        let defaults = UserDefaults.standard
         
         if username != "" && password != "" {
             LoadingIndicator.isHidden = false
