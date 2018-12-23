@@ -16,4 +16,5 @@ struct StudentsLocations {
     }
     
     var studentsInformation = [StudentDetails]()
+    
 }

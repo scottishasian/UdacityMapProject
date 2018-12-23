@@ -13,7 +13,6 @@ import CoreLocation
 class MapPinViewController: BaseMapViewController {
     
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var LoginButton: UIButton!
     
     var studentDetails : StudentDetails?
 
@@ -32,10 +31,14 @@ class MapPinViewController: BaseMapViewController {
                 latitude: studentLocation.latitude,
                 longitude: studentLocation.longitude,
                 createdAt: "",
-                updatedAt: ""
+                updateTime: ""
             )
             showStudentLocations(location: location)
         }
+    }
+    
+    @IBAction func finishButton(_ sender: Any) {
+        postNewLocaton()
     }
     
     private func showStudentLocations(location: LocationDetails) {
@@ -48,6 +51,20 @@ class MapPinViewController: BaseMapViewController {
             mapView.addAnnotation(annotation)
             mapView.showAnnotations(mapView.annotations, animated: true)
             
+        }
+    }
+    
+    private func postNewLocaton() {
+        if let newLocation = studentDetails {
+            if newLocation.locationID != nil {
+                DataClient.sharedInstance().updateUserLocation(newInformation: newLocation, completionHandler: {(success, error) in
+                    print(error?.localizedDescription as Any)
+                })
+            } else {
+                DataClient.sharedInstance().postUserLocation(information: newLocation, completionHandler: {(success, error) in
+                    print(error?.localizedDescription as Any)
+                })
+            }
         }
     }
     

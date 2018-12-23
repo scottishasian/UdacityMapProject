@@ -223,16 +223,34 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HFX-uf-bHT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTk-FH-mau">
+                                <rect key="frame" x="49" y="593" width="276" height="54"/>
+                                <color key="backgroundColor" red="0.0086828044040000007" green="0.0086828044040000007" blue="0.0086828044040000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Finish">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishButton:" destination="xph-aK-OlJ" eventType="touchUpInside" id="swK-Qw-ulK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HFX-uf-bHT" firstAttribute="top" secondItem="yyy-8p-ocn" secondAttribute="top" id="DSC-RB-z75"/>
+                            <constraint firstItem="8br-CH-LDu" firstAttribute="bottom" secondItem="kTk-FH-mau" secondAttribute="bottom" constant="20" id="Tnq-bV-Urk"/>
                             <constraint firstItem="HFX-uf-bHT" firstAttribute="bottom" secondItem="8br-CH-LDu" secondAttribute="bottom" id="UEr-Ca-fV6"/>
+                            <constraint firstItem="kTk-FH-mau" firstAttribute="leading" secondItem="8br-CH-LDu" secondAttribute="leading" constant="49" id="bYE-3E-vMh"/>
                             <constraint firstItem="HFX-uf-bHT" firstAttribute="leading" secondItem="yyy-8p-ocn" secondAttribute="leading" id="gM3-u3-6yR"/>
+                            <constraint firstItem="kTk-FH-mau" firstAttribute="top" secondItem="8br-CH-LDu" secondAttribute="top" constant="573" id="i2M-7X-NcM"/>
                             <constraint firstItem="HFX-uf-bHT" firstAttribute="trailing" secondItem="8br-CH-LDu" secondAttribute="trailing" id="nHP-ki-FN5"/>
+                            <constraint firstItem="8br-CH-LDu" firstAttribute="trailing" secondItem="kTk-FH-mau" secondAttribute="trailing" constant="50" id="rRm-Wd-fv0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8br-CH-LDu"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="HFX-uf-bHT" id="BKR-6h-ZWd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82w-4O-uzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

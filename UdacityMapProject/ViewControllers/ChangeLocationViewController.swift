@@ -48,9 +48,10 @@ class ChangeLocationViewController: UIViewController, UITextFieldDelegate {
             LocationTextField.resignFirstResponder()
             dismiss(animated: true, completion: nil)
         }
+        geocodePosition(newlocatation: newLocation)
     }
     
-    private func position(newlocatation: String) {
+    private func geocodePosition(newlocatation: String) {
         geoCoder.geocodeAddressString(newlocatation) { (newMarker, error) in
             
             if let error = error {
@@ -75,6 +76,7 @@ class ChangeLocationViewController: UIViewController, UITextFieldDelegate {
         
         let showNewLocation = storyboard?.instantiateViewController(withIdentifier: "MapPinView") as! MapPinViewController
         showNewLocation.studentDetails = buildStudentDetails(coordinate)
+        navigationController?.pushViewController(showNewLocation, animated: true)
         
     }
     

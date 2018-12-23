@@ -111,7 +111,7 @@ extension DataClient {
     
     //To fetch user loaction
     func studentsDetails(completionHandler: @escaping (_ result: [StudentDetails]?, _ error: NSError?) -> Void) {
-        let parameters = [Constants.ParseParameterKeys.Order: "-updatedAt" as AnyObject]
+        let parameters = [Constants.ParseParameterKeys.Order: "-updateTime" as AnyObject]
         _ = taskForGetMethod(Constants.ParseMethods.studentLocations, parameters: parameters, apiType: .parseAPI) { (data, error) in
             if let error = error {
                 print(error)
@@ -134,6 +134,75 @@ extension DataClient {
                 }
             }
             
+        }
+    }
+    
+    //For Put method in MapPinView
+    func updateUserLocation(newInformation: StudentDetails, completionHandler: @escaping (_ success: Bool, _ errpr: NSError?) -> Void) {
+        
+        let parameters =
+            [Constants.ParseParameterKeys.restAPIKey : Constants.ParseParameterValues.restAPIKey,
+             Constants.ParseParameterKeys.parseID : Constants.ParseParameterValues.parseID] as [String : AnyObject]
+        
+        let jsonBody = "{\"uniqueKey\": \"\(newInformation.studentKey)\", \"firstName\": \"\(newInformation.firstName)\", \"lastName\": \"\(newInformation.surname)\",\"mapString\": \"\(newInformation.mapString)\", \"mediaURL\": \"\(newInformation.mediaURL)\",\"latitude\": \(newInformation.latitude), \"longitude\": \(newInformation.longitude)}"
+        
+        let updateURL =  Constants.ParseMethods.studentLocations + "/\(newInformation.locationID ?? "")"
+        
+        _ = taskForPutMethod(updateURL, parameters: parameters, jsonBody: jsonBody, completionHandlerForPUT: { (data, error) in
+            if let error = error {
+                print(error)
+                completionHandler(false, error)
+            } else {
+                
+                var dataResponse: DataResponse!
+                do {
+                    if let data = data {
+                        let decoder = JSONDecoder()
+                        dataResponse = try decoder.decode(DataResponse.self, from: data as! Data)
+                        if let dataResponse = dataResponse, dataResponse.updateTime != nil {
+                            completionHandler(true, nil)
+                        }
+                    }
+                } catch {
+                    let errorMessage = "Data could not be parsed \(error.localizedDescription)"
+                    print(errorMessage)
+                    let loggedInUser = [NSLocalizedDescriptionKey : errorMessage]
+                    completionHandler(false, NSError(domain: "updateUserLocation", code: 1, userInfo: loggedInUser))
+                }
+            }
+        })
+    }
+    
+    func postUserLocation(information: StudentDetails, completionHandler: @escaping (_ success: Bool, _ errpr: NSError?) -> Void) {
+        
+        let parameters =
+            [Constants.ParseParameterKeys.restAPIKey : Constants.ParseParameterValues.restAPIKey,
+             Constants.ParseParameterKeys.parseID : Constants.ParseParameterValues.parseID] as [String : AnyObject]
+        
+        let jsonBody = "{\"uniqueKey\": \"\(information.studentKey)\", \"firstName\": \"\(information.firstName)\", \"lastName\": \"\(information.surname)\",\"mapString\": \"\(information.mapString)\", \"mediaURL\": \"\(information.mediaURL)\",\"latitude\": \(information.latitude), \"longitude\": \(information.longitude)}"
+        
+        _ = taskForPostMethod(Constants.ParseMethods.studentLocations, parameters: [:], requestHeader: parameters, jsonBody: jsonBody, apiType: .parseAPI) { (data, error) in
+            if let error = error {
+                print(error)
+                completionHandler(false, error)
+            } else {
+                
+                var dataResponse: DataResponse!
+                do {
+                    if let data = data {
+                        let decoder = JSONDecoder()
+                        dataResponse = try decoder.decode(DataResponse.self, from: data as! Data)
+                        if let dataResponse = dataResponse, dataResponse.createdAt != nil {
+                            completionHandler(true, nil)
+                        }
+                    }
+                } catch {
+                    let errorMessage = "Data could not be parsed \(error.localizedDescription)"
+                    print(errorMessage)
+                    let loggedInUser = [NSLocalizedDescriptionKey : errorMessage]
+                    completionHandler(false, NSError(domain: "updateUserLocation", code: 1, userInfo: loggedInUser))
+                }
+            }
         }
     }
  

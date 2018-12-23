@@ -19,7 +19,7 @@ struct LocationDetails: Codable {
     let latitude: Double?
     let longitude: Double?
     let createdAt: String
-    let updatedAt: String
+    let updateTime: String
     
     var locationDetailLabel: String {
         var name = ""
