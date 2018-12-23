@@ -25,6 +25,16 @@ extension UIViewController {
         }
     }
     
+    
+    //https://stackoverflow.com/questions/25945324/swift-open-link-in-safari
+    func openLink(_ url: String) {
+        guard let url = URL(string: url) else {
+            showInfo(withMessage: "Link failed to load.")
+            return
+        }
+        UIApplication.shared.open(url)
+    }
+    
 }
 
 

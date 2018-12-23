@@ -54,7 +54,7 @@ class ChangeLocationViewController: UIViewController, UITextFieldDelegate {
         geoCoder.geocodeAddressString(newlocatation) { (newMarker, error) in
             
             if let error = error {
-                self.showInfo(withTitle: "Error", withMessage: "Unable to find location")
+                self.showInfo(withTitle: "Error", withMessage: "Unable to find location: \(error)")
             } else {
                 var location: CLLocation?
                 
@@ -88,7 +88,7 @@ class ChangeLocationViewController: UIViewController, UITextFieldDelegate {
             "firstName": firstName,
             "lastName": surname,
             "mapString": LocationTextField.text!,
-            //"mediaURL": textFieldLink.text!,
+            //"mediaURL": URLTextField.text!,
             "latitude": coordinates.latitude,
             "longitude": coordinates.longitude,
             ] as [String: AnyObject]

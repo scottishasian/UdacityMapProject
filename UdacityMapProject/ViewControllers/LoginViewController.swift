@@ -53,6 +53,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
+    @IBAction func pressSignUp(_ sender: Any) {
+        openLink(Constants.Udacity.SignUp)
+    }
+    
     private func logUserIn(userName : String, password : String) {
         DataClient.sharedInstance().authenticateUser(username: userName, password: password) {(success, error) in
             if success {
