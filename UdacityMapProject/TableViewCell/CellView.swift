@@ -16,6 +16,8 @@ class CellView: UITableViewCell {
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelURL: UILabel!
     
+    
+    
     func configureCell(_ info: StudentDetails) {
         labelName.text = info.label
         labelURL.text = info.mediaURL

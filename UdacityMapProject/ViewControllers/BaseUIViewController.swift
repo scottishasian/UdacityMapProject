@@ -13,7 +13,7 @@ class BaseUIViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadStudentsInformation()
+        //loadStudentsInformation()
     }
     
     @objc private func loadStudentsInformation() {

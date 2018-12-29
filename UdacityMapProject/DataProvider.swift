@@ -31,7 +31,7 @@ class DataProvider: NSObject, UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didSelectStudentLocation(information: StudentsLocations.sharedData.studentsInformation[indexPath])
+        delegate?.didSelectStudentLocation(information: StudentsLocations.sharedData.studentsInformation[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

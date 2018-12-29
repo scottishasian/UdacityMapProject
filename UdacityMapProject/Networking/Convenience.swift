@@ -118,7 +118,7 @@ extension DataClient {
                 completionHandler(nil, error)
             } else {
                 if let data = data {
-                    let dict = data as? [AnyHashable:Any]
+                    //let dict = data as? [AnyHashable:Any]
                     self.convertDataWithCompletionHandler(data as! Data, completionHandlerForConvertingData: { (parsedJson, error) in
                         var loggedInStudent = [StudentDetails]()
                         if let results = parsedJson?[Constants.ParseJSONKeys.Results] as? [[String : AnyObject]] {
