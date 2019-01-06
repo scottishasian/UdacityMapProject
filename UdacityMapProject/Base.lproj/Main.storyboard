@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RHL-Kt-tPb">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,19 +16,19 @@
             <objects>
                 <tableViewController id="IAh-ao-5aW" customClass="StudentListViewController" customModule="UdacityMapProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SPS-mB-utr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CellView" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellView" rowHeight="92" id="Han-tL-gef" customClass="CellView" customModule="UdacityMapProject" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="92"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Han-tL-gef" id="TFS-zg-DfK" customClass="CellView" customModule="UdacityMapProject" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="91.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skm-8X-7q8">
-                                            <rect key="frame" x="0.0" y="0.0" width="174.5" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="119.5" height="64"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_pin" translatesAutoresizingMaskIntoConstraints="NO" id="PuB-wS-6om">
                                                     <rect key="frame" x="0.0" y="0.0" width="51" height="64"/>
@@ -38,16 +38,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RBl-ym-zjf">
-                                                    <rect key="frame" x="51" y="0.0" width="123.5" height="64"/>
+                                                    <rect key="frame" x="51" y="0.0" width="68.5" height="64"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StudentName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbH-zS-qVA">
-                                                            <rect key="frame" x="0.0" y="0.0" width="123.5" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="68.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="StudentURL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnz-NR-K1a">
-                                                            <rect key="frame" x="0.0" y="20.5" width="123.5" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="20.5" width="68.5" height="43.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -94,7 +94,7 @@
                 <navigationController id="6hF-wn-VZY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Location List" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="Nfm-rA-w5o"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3R6-aH-ERq">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -110,14 +110,14 @@
             <objects>
                 <viewController storyboardIdentifier="MapView" id="KtN-jh-3Nu" userLabel="Map View Controller" customClass="MapViewController" customModule="UdacityMapProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KKC-pz-6W0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XWr-ov-XMz">
-                                <rect key="frame" x="0.0" y="54" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="54" width="320" height="460"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RzK-oq-We1">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                     </mapView>
                                 </subviews>
                                 <constraints>
@@ -180,11 +180,11 @@
             <objects>
                 <viewController storyboardIdentifier="ChangeLocationController" id="9Ca-FJ-Ze8" customClass="InformationPostingView" customModule="UdacityMapProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="14T-h0-kVJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-uL-Biz">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-uL-Biz">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Change Location" id="wvl-R1-RzH">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="ZoV-BW-WQj">
@@ -195,8 +195,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiS-LP-dB3">
-                                <rect key="frame" x="126" y="457" width="123" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiS-LP-dB3">
+                                <rect key="frame" x="126" y="526" width="68" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Current Location"/>
@@ -204,23 +204,23 @@
                                     <action selector="CurrentLocationButton:" destination="9Ca-FJ-Ze8" eventType="touchUpInside" id="6sJ-qb-cbc"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cCY-GG-Klp">
-                                <rect key="frame" x="87" y="270.5" width="202" height="90"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cCY-GG-Klp">
+                                <rect key="frame" x="87" y="270.66666666666669" width="146.5" height="65"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXO-OG-M6L">
-                                        <rect key="frame" x="0.0" y="0.0" width="202" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXO-OG-M6L">
+                                        <rect key="frame" x="0.0" y="0.0" width="146.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lzZ-f1-M9M" userLabel="Link Text Field">
-                                        <rect key="frame" x="0.0" y="30" width="202" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lzZ-f1-M9M" userLabel="Link Text Field">
+                                        <rect key="frame" x="0.0" y="30" width="146.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEC-79-FML">
-                                        <rect key="frame" x="0.0" y="60" width="202" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEC-79-FML">
+                                        <rect key="frame" x="0.0" y="60" width="146.5" height="5"/>
                                         <color key="backgroundColor" red="0.0086828044040000007" green="0.0086828044040000007" blue="0.0086828044040000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Search">
@@ -263,14 +263,14 @@
             <objects>
                 <viewController storyboardIdentifier="MapPinView" id="xph-aK-OlJ" customClass="MapPinViewController" customModule="UdacityMapProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yyy-8p-ocn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HFX-uf-bHT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTk-FH-mau">
-                                <rect key="frame" x="49" y="593" width="276" height="54"/>
+                                <rect key="frame" x="49" y="593" width="221" height="35"/>
                                 <color key="backgroundColor" red="0.0086828044040000007" green="0.0086828044040000007" blue="0.0086828044040000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Finish">
@@ -307,14 +307,14 @@
             <objects>
                 <viewController id="RHL-Kt-tPb" userLabel="Login View Controller" customClass="LoginViewController" customModule="UdacityMapProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KKX-qZ-vNQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="BiD-67-DMn">
-                                <rect key="frame" x="45" y="86" width="283" height="174"/>
+                                <rect key="frame" x="36" y="124" width="248.5" height="162"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZwZ-0d-fEC">
-                                        <rect key="frame" x="0.0" y="0.0" width="283" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="248.5" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Ffl-Iv-6ve"/>
                                         </constraints>
@@ -323,7 +323,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CGN-gV-rHR">
-                                        <rect key="frame" x="0.0" y="44" width="283" height="30"/>
+                                        <rect key="frame" x="0.0" y="44" width="248.5" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="UU7-dm-dE7"/>
                                         </constraints>
@@ -332,7 +332,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egm-DR-dKr">
-                                        <rect key="frame" x="0.0" y="88" width="283" height="42"/>
+                                        <rect key="frame" x="0.0" y="88" width="248.5" height="30"/>
                                         <color key="backgroundColor" red="0.0086828044040000007" green="0.0086828044040000007" blue="0.0086828044040000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Log In"/>
@@ -341,7 +341,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1s-GF-dLG">
-                                        <rect key="frame" x="0.0" y="144" width="283" height="30"/>
+                                        <rect key="frame" x="0.0" y="132" width="248.5" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have and account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76B-Kt-Oss">
                                                 <rect key="frame" x="0.0" y="0.0" width="193.5" height="30"/>
@@ -350,35 +350,41 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s28-DZ-Qp0">
-                                                <rect key="frame" x="193.5" y="0.0" width="89.5" height="30"/>
+                                                <rect key="frame" x="193.5" y="0.0" width="55" height="30"/>
                                                 <state key="normal" title="Sign Up"/>
                                                 <connections>
                                                     <action selector="pressSignUp:" destination="RHL-Kt-tPb" eventType="touchUpInside" id="NI3-2K-GWQ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="76B-Kt-Oss" firstAttribute="leading" secondItem="h1s-GF-dLG" secondAttribute="leading" id="7N4-YG-ZRr"/>
+                                            <constraint firstItem="76B-Kt-Oss" firstAttribute="top" secondItem="h1s-GF-dLG" secondAttribute="top" id="gVU-WE-ZPy"/>
+                                            <constraint firstItem="s28-DZ-Qp0" firstAttribute="leading" secondItem="76B-Kt-Oss" secondAttribute="trailing" id="wFd-sm-8Fr"/>
+                                            <constraint firstAttribute="bottom" secondItem="76B-Kt-Oss" secondAttribute="bottom" id="www-kL-qc1"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Egm-DR-dKr" firstAttribute="top" secondItem="CGN-gV-rHR" secondAttribute="bottom" constant="14" id="GVg-vc-ciz"/>
-                                    <constraint firstAttribute="trailing" secondItem="Egm-DR-dKr" secondAttribute="trailing" id="c9G-Sp-e94"/>
-                                    <constraint firstItem="Egm-DR-dKr" firstAttribute="leading" secondItem="BiD-67-DMn" secondAttribute="leading" id="hAi-a2-6WA"/>
+                                    <constraint firstItem="h1s-GF-dLG" firstAttribute="leading" secondItem="BiD-67-DMn" secondAttribute="leading" id="0kW-P1-qSm"/>
+                                    <constraint firstAttribute="trailing" secondItem="h1s-GF-dLG" secondAttribute="trailing" id="31N-pq-RhM"/>
+                                    <constraint firstItem="h1s-GF-dLG" firstAttribute="top" secondItem="Egm-DR-dKr" secondAttribute="bottom" constant="14" id="8Pq-1o-bIR"/>
+                                    <constraint firstAttribute="bottom" secondItem="h1s-GF-dLG" secondAttribute="bottom" id="9i4-6y-RhQ"/>
+                                    <constraint firstItem="h1s-GF-dLG" firstAttribute="top" secondItem="Egm-DR-dKr" secondAttribute="bottom" constant="14" id="BRW-QG-UFx"/>
+                                    <constraint firstAttribute="trailing" secondItem="h1s-GF-dLG" secondAttribute="trailing" id="Lgh-w0-vTm"/>
+                                    <constraint firstItem="h1s-GF-dLG" firstAttribute="leading" secondItem="BiD-67-DMn" secondAttribute="leading" id="SbD-5u-pLi"/>
                                 </constraints>
                             </stackView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IrS-Md-hS7">
-                                <rect key="frame" x="177" y="315" width="20" height="20"/>
+                                <rect key="frame" x="149.5" y="358" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="IrS-Md-hS7" firstAttribute="top" secondItem="BiD-67-DMn" secondAttribute="bottom" constant="55" id="4Ee-vQ-9Ur"/>
-                            <constraint firstItem="lWE-Ua-1hO" firstAttribute="bottom" secondItem="BiD-67-DMn" secondAttribute="bottom" constant="407" id="6i5-5e-k2Y"/>
-                            <constraint firstItem="BiD-67-DMn" firstAttribute="top" secondItem="lWE-Ua-1hO" secondAttribute="top" constant="66" id="9sh-za-GMF"/>
-                            <constraint firstItem="lWE-Ua-1hO" firstAttribute="trailing" secondItem="IrS-Md-hS7" secondAttribute="trailing" constant="178" id="K8U-FJ-uj4"/>
-                            <constraint firstItem="lWE-Ua-1hO" firstAttribute="trailing" secondItem="BiD-67-DMn" secondAttribute="trailing" constant="47" id="NZ9-wf-5PU"/>
-                            <constraint firstItem="IrS-Md-hS7" firstAttribute="leading" secondItem="lWE-Ua-1hO" secondAttribute="leading" constant="177" id="dyY-9h-bP2"/>
-                            <constraint firstItem="lWE-Ua-1hO" firstAttribute="bottom" secondItem="IrS-Md-hS7" secondAttribute="bottom" constant="332" id="kyq-Ow-Uoo"/>
-                            <constraint firstItem="BiD-67-DMn" firstAttribute="leading" secondItem="lWE-Ua-1hO" secondAttribute="leading" constant="45" id="rgz-Bu-lzo"/>
+                            <constraint firstItem="BiD-67-DMn" firstAttribute="centerX" secondItem="IrS-Md-hS7" secondAttribute="centerX" id="FaE-JI-Bq9"/>
+                            <constraint firstItem="BiD-67-DMn" firstAttribute="top" secondItem="lWE-Ua-1hO" secondAttribute="top" constant="104" id="Hdv-Ws-Hp8"/>
+                            <constraint firstItem="IrS-Md-hS7" firstAttribute="top" secondItem="BiD-67-DMn" secondAttribute="bottom" constant="72" id="O6I-CN-LUg"/>
+                            <constraint firstItem="BiD-67-DMn" firstAttribute="centerX" secondItem="KKX-qZ-vNQ" secondAttribute="centerX" id="akz-eh-NJA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lWE-Ua-1hO"/>
                     </view>
@@ -400,7 +406,7 @@
                     <tabBarItem key="tabBarItem" title="Map View" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="ztC-sP-BpJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qeG-kk-qK3">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
