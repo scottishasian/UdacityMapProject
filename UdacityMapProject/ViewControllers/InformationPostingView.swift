@@ -40,11 +40,12 @@ class InformationPostingView: UIViewController, UITextFieldDelegate {
         let newLocation = LocationTextField.text!
         let newWebsite = LinkTextField.text!
         
-        if newLocation != "" || newWebsite != "" {
+        if newLocation.isEmpty || newWebsite.isEmpty {
+            showInfo(withMessage: "All fields need to be filled.")
+            return
+        } else {
             LocationTextField.resignFirstResponder()
             dismiss(animated: true, completion: nil)
-        } else {
-            showInfo(withMessage: "All fields need to be filled.")
         }
         
         guard let newURL = URL(string: newWebsite), UIApplication.shared.canOpenURL(newURL) else {
@@ -104,16 +105,18 @@ class InformationPostingView: UIViewController, UITextFieldDelegate {
         return StudentDetails(studentInfo)
     }
     
+    private func createNavBarForPinView() {
+        self.navigationItem.title = "Post new location"
+        
+        let backButton = UIBarButtonItem()
+        backButton.title = "Cancel"
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+    
     @IBAction func CurrentLocationButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
 }
 
-//extension ChangeLocationViewController : UISearchResultsUpdating {
-//
-//    func updateSearchResults(for searchController: UISearchController) {
-//        print("hello")
-//    }
-//}
 
 

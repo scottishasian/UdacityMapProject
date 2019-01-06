@@ -122,6 +122,7 @@ extension DataClient {
                     self.convertDataWithCompletionHandler(data, completionHandlerForConvertingData: { (parsedJson, error) in
                         var loggedInStudent = [StudentDetails]()
                         //Suggested refactor would not work as data would not accept index string.
+                        //if let results = data[Constants.ParseJSONKeys.Results] as? [[String : AnyObject]] {
                         if let results = parsedJson?[Constants.ParseJSONKeys.Results] as? [[String : AnyObject]] {
                             for info in results {
                                 loggedInStudent.append(StudentDetails(info))

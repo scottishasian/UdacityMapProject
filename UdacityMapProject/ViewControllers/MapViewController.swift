@@ -13,20 +13,23 @@ import CoreLocation
 class MapViewController: BaseMapViewController {
     
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var ChangeLocationButton: UIButton!
-    
-    
     let regionRadius: CLLocationDistance = 1000
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
         
-        //loadUserLocation()
+        loadUserLocation()
  
     }
     
-    @objc func reloadMap() {
+    @objc func startMapReload() {
+        performUIUpdatesOnMain {
+            self.mapView.alpha = 0.2
+        }
+    }
+    
+    @objc func reloadMapCompleted() {
         performUIUpdatesOnMain {
             self.mapView.alpha = 1
             self.showStudentsDetails(StudentsLocations.sharedData.studentsInformation)
