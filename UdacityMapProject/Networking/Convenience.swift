@@ -85,7 +85,7 @@ extension DataClient {
                 print(error)
                 completionHandler(nil, error)
             } else {
-                let response = self.parseStudentInformation(data: data as? Data)
+                let response = self.parseStudentInformation(data: data)
                 if let information = response.0 {
                     completionHandler(information, nil)
                 } else {
@@ -119,8 +119,9 @@ extension DataClient {
             } else {
                 if let data = data {
                     //let dict = data as? [AnyHashable:Any]
-                    self.convertDataWithCompletionHandler(data as! Data, completionHandlerForConvertingData: { (parsedJson, error) in
+                    self.convertDataWithCompletionHandler(data, completionHandlerForConvertingData: { (parsedJson, error) in
                         var loggedInStudent = [StudentDetails]()
+                        //Suggested refactor would not work as data would not accept index string.
                         if let results = parsedJson?[Constants.ParseJSONKeys.Results] as? [[String : AnyObject]] {
                             for info in results {
                                 loggedInStudent.append(StudentDetails(info))

@@ -1,5 +1,5 @@
 //
-//  ChangeLocationViewController.swift
+//  InformationPostingView.swift
 //  UdacityMapProject
 //
 //  Created by Kynan Song on 18/11/2018.
@@ -10,25 +10,20 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ChangeLocationViewController: UIViewController, UITextFieldDelegate {
+class InformationPostingView: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var LocationTextField: UITextField!
+    @IBOutlet weak var LinkTextField: UITextField!
+    @IBOutlet weak var SearchForLocation: UIButton!
     var geoCoder = CLGeocoder()
     var locationID: String?
     //To determine POST or PUT.
-    
-    
-//    var resultSearchController:UISearchController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.clear
         view.isOpaque = false
         self.LocationTextField.delegate =  self
-        
-//        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "ChangeLocationController") as! ChangeLocationViewController
-//        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
-//        resultSearchController?.searchResultsUpdater = locationSearchTable
     }
     
     @IBAction func BackButton(_ sender: Any) {
@@ -43,10 +38,18 @@ class ChangeLocationViewController: UIViewController, UITextFieldDelegate {
     @IBAction func SearchButton(_ sender: Any) {
         
         let newLocation = LocationTextField.text!
+        let newWebsite = LinkTextField.text!
         
-        if newLocation != "" {
+        if newLocation != "" || newWebsite != "" {
             LocationTextField.resignFirstResponder()
             dismiss(animated: true, completion: nil)
+        } else {
+            showInfo(withMessage: "All fields need to be filled.")
+        }
+        
+        guard let newURL = URL(string: newWebsite), UIApplication.shared.canOpenURL(newURL) else {
+            showInfo(withMessage: "Link invalid!")
+            return
         }
         geocodePosition(newlocatation: newLocation)
     }
@@ -100,7 +103,6 @@ class ChangeLocationViewController: UIViewController, UITextFieldDelegate {
         }
         return StudentDetails(studentInfo)
     }
-    
     
     @IBAction func CurrentLocationButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)

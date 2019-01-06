@@ -30,7 +30,7 @@ class DataClient: NSObject {
         super.init()
     }
     
-    func taskForGetMethod(_ method: String, parameters: [String:AnyObject], apiType: APIType = .udacityAPI, completionHandlerForGET: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionDataTask {
+    func taskForGetMethod(_ method: String, parameters: [String:AnyObject], apiType: APIType = .udacityAPI, completionHandlerForGET: @escaping (_ result: Data?, _ error: NSError?) -> Void) -> URLSessionDataTask {
         
         let request = NSMutableURLRequest(url: urlFromParameters(parameters, withPathExtension: method, apiType:  apiType))
         
@@ -66,7 +66,8 @@ class DataClient: NSObject {
             }
             
             /* 5/6. Parse the data and use the data (happens in completion handler) */
-            self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHandlerForGET)
+            //self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHandlerForGET)
+            completionHandlerForGET(data, nil)
         }
         
         task.resume()
