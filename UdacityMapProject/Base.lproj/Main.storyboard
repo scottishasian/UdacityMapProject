@@ -53,8 +53,21 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="FbH-zS-qVA" firstAttribute="top" secondItem="RBl-ym-zjf" secondAttribute="top" id="76G-8R-wNm"/>
+                                                        <constraint firstItem="FbH-zS-qVA" firstAttribute="leading" secondItem="RBl-ym-zjf" secondAttribute="leading" id="OQY-vM-ohh"/>
+                                                        <constraint firstItem="dnz-NR-K1a" firstAttribute="top" secondItem="FbH-zS-qVA" secondAttribute="bottom" id="bc6-Kd-0cq"/>
+                                                        <constraint firstAttribute="trailing" secondItem="FbH-zS-qVA" secondAttribute="trailing" id="eLh-Y9-9he"/>
+                                                        <constraint firstAttribute="trailing" secondItem="dnz-NR-K1a" secondAttribute="trailing" id="i5I-GC-Hk0"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="RBl-ym-zjf" secondAttribute="trailing" id="9QG-gZ-dpU"/>
+                                                <constraint firstAttribute="trailing" secondItem="RBl-ym-zjf" secondAttribute="trailing" id="PcR-Tv-i8w"/>
+                                                <constraint firstAttribute="bottom" secondItem="RBl-ym-zjf" secondAttribute="bottom" id="ar3-qY-AL6"/>
+                                                <constraint firstItem="RBl-ym-zjf" firstAttribute="top" secondItem="skm-8X-7q8" secondAttribute="top" id="jwp-1J-fHM"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
@@ -183,7 +196,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-uL-Biz">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-uL-Biz">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Change Location" id="wvl-R1-RzH">
@@ -195,32 +208,23 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiS-LP-dB3">
-                                <rect key="frame" x="126" y="526" width="68" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Current Location"/>
-                                <connections>
-                                    <action selector="CurrentLocationButton:" destination="9Ca-FJ-Ze8" eventType="touchUpInside" id="6sJ-qb-cbc"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cCY-GG-Klp">
-                                <rect key="frame" x="87" y="270.66666666666669" width="146.5" height="65"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cCY-GG-Klp">
+                                <rect key="frame" x="87" y="270.5" width="146.5" height="90"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXO-OG-M6L">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXO-OG-M6L">
                                         <rect key="frame" x="0.0" y="0.0" width="146.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lzZ-f1-M9M" userLabel="Link Text Field">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lzZ-f1-M9M" userLabel="Link Text Field">
                                         <rect key="frame" x="0.0" y="30" width="146.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEC-79-FML">
-                                        <rect key="frame" x="0.0" y="60" width="146.5" height="5"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEC-79-FML">
+                                        <rect key="frame" x="0.0" y="60" width="146.5" height="30"/>
                                         <color key="backgroundColor" red="0.0086828044040000007" green="0.0086828044040000007" blue="0.0086828044040000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Search">
@@ -231,20 +235,22 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="gXO-OG-M6L" firstAttribute="top" secondItem="cCY-GG-Klp" secondAttribute="top" id="Mmh-KS-IbL"/>
+                                    <constraint firstAttribute="trailing" secondItem="gXO-OG-M6L" secondAttribute="trailing" id="YWP-YJ-vJI"/>
+                                    <constraint firstItem="gXO-OG-M6L" firstAttribute="leading" secondItem="cCY-GG-Klp" secondAttribute="leading" id="bem-5v-xTC"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="nxV-47-P9I" firstAttribute="bottom" secondItem="EiS-LP-dB3" secondAttribute="bottom" constant="180" id="1GZ-Ee-uDl"/>
-                            <constraint firstItem="EiS-LP-dB3" firstAttribute="leading" secondItem="nxV-47-P9I" secondAttribute="leading" constant="126" id="8UK-9y-d9W"/>
                             <constraint firstItem="ybv-uL-Biz" firstAttribute="trailing" secondItem="nxV-47-P9I" secondAttribute="trailing" id="8q2-j0-DIh"/>
-                            <constraint firstItem="EiS-LP-dB3" firstAttribute="top" secondItem="cCY-GG-Klp" secondAttribute="bottom" constant="96.5" id="9Sc-Ed-aKC"/>
-                            <constraint firstItem="nxV-47-P9I" firstAttribute="trailing" secondItem="EiS-LP-dB3" secondAttribute="trailing" constant="126" id="UL2-3s-fDJ"/>
                             <constraint firstItem="ybv-uL-Biz" firstAttribute="top" secondItem="nxV-47-P9I" secondAttribute="top" id="UrD-5F-cnz"/>
                             <constraint firstItem="cCY-GG-Klp" firstAttribute="leading" secondItem="nxV-47-P9I" secondAttribute="leading" constant="87" id="Za7-MR-9Ri"/>
                             <constraint firstItem="nxV-47-P9I" firstAttribute="trailing" secondItem="cCY-GG-Klp" secondAttribute="trailing" constant="86.5" id="acL-XS-wrR"/>
                             <constraint firstItem="cCY-GG-Klp" firstAttribute="top" secondItem="ybv-uL-Biz" secondAttribute="bottom" constant="206.5" id="kO7-eW-DQg"/>
                             <constraint firstItem="ybv-uL-Biz" firstAttribute="leading" secondItem="nxV-47-P9I" secondAttribute="leading" id="o1i-I2-nYB"/>
+                            <constraint firstItem="nxV-47-P9I" firstAttribute="bottom" secondItem="cCY-GG-Klp" secondAttribute="bottom" constant="375.32999999999998" id="tmO-Gl-4CP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nxV-47-P9I"/>
                     </view>
@@ -256,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7X-Hb-adF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2756" y="168.6656671664168"/>
+            <point key="canvasLocation" x="2755.072463768116" y="167.93478260869566"/>
         </scene>
         <!--Map Pin View Controller-->
         <scene sceneID="PDC-21-afW">
