@@ -20,7 +20,7 @@ class BaseUIViewController: UITabBarController {
         DataClient.sharedInstance().studentsDetails {
             (studentDetails, error) in
             if let error = error {
-                self.showInfo(withTitle: "Error", withMessage: error.localizedFailureReason!)
+                self.showInfo(withTitle: "Error", withMessage: error.localizedDescription)
                 return
             }
             if let studentDetails = studentDetails {

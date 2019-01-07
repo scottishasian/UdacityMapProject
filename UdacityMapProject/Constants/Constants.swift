@@ -24,7 +24,7 @@ struct Constants {
     }
     
     struct ParseMethods {
-        static let studentLocations = "/classes/StudentLocation"
+        static let StudentLocation = "/classes/StudentLocation"
     }
     
     struct ParseParameterKeys {

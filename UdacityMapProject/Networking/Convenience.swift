@@ -109,10 +109,11 @@ extension DataClient {
 
     }
     
-    //To fetch user loaction
+    //To fetch user location
     func studentsDetails(completionHandler: @escaping (_ result: [StudentDetails]?, _ error: NSError?) -> Void) {
         let parameters = [Constants.ParseParameterKeys.Order: "-updateTime" as AnyObject]
-        _ = taskForGetMethod(Constants.ParseMethods.studentLocations, parameters: parameters, apiType: .parseAPI) { (data, error) in
+        _ = taskForGetMethod(Constants.ParseMethods.StudentLocation, parameters: parameters, apiType: .parseAPI) { (data, error) in
+            //When called, all the below is skipped.
             if let error = error {
                 print(error)
                 completionHandler(nil, error)
@@ -121,9 +122,10 @@ extension DataClient {
                     //let dict = data as? [AnyHashable:Any]
                     self.convertDataWithCompletionHandler(data, completionHandlerForConvertingData: { (parsedJson, error) in
                         var loggedInStudent = [StudentDetails]()
+                        let dict =  parsedJson as? [AnyHashable:Any]
                         //Suggested refactor would not work as data would not accept index string.
                         //if let results = data[Constants.ParseJSONKeys.Results] as? [[String : AnyObject]] {
-                        if let results = parsedJson?[Constants.ParseJSONKeys.Results] as? [[String : AnyObject]] {
+                        if let results = dict?[Constants.ParseJSONKeys.Results] as? [[String : AnyObject]] {
                             for info in results {
                                 loggedInStudent.append(StudentDetails(info))
                             }
@@ -135,8 +137,7 @@ extension DataClient {
                     })
                     
                 }
-            }
-            
+            } 
         }
     }
     
@@ -149,7 +150,7 @@ extension DataClient {
         
         let jsonBody = "{\"uniqueKey\": \"\(newInformation.studentKey)\", \"firstName\": \"\(newInformation.firstName)\", \"lastName\": \"\(newInformation.surname)\",\"mapString\": \"\(newInformation.mapString)\", \"mediaURL\": \"\(newInformation.mediaURL)\",\"latitude\": \(newInformation.latitude), \"longitude\": \(newInformation.longitude)}"
         
-        let updateURL =  Constants.ParseMethods.studentLocations + "/\(newInformation.locationID ?? "")"
+        let updateURL =  Constants.ParseMethods.StudentLocation + "/\(newInformation.locationID ?? "")"
         
         _ = taskForPutMethod(updateURL, parameters: parameters, jsonBody: jsonBody, completionHandlerForPUT: { (data, error) in
             if let error = error {
@@ -184,7 +185,7 @@ extension DataClient {
         
         let jsonBody = "{\"uniqueKey\": \"\(information.studentKey)\", \"firstName\": \"\(information.firstName)\", \"lastName\": \"\(information.surname)\",\"mapString\": \"\(information.mapString)\", \"mediaURL\": \"\(information.mediaURL)\",\"latitude\": \(information.latitude), \"longitude\": \(information.longitude)}"
         
-        _ = taskForPostMethod(Constants.ParseMethods.studentLocations, parameters: [:], requestHeader: parameters, jsonBody: jsonBody, apiType: .parseAPI) { (data, error) in
+        _ = taskForPostMethod(Constants.ParseMethods.StudentLocation, parameters: [:], requestHeader: parameters, jsonBody: jsonBody, apiType: .parseAPI) { (data, error) in
             if let error = error {
                 print(error)
                 completionHandler(false, error)
