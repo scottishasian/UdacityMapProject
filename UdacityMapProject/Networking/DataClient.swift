@@ -35,8 +35,9 @@ class DataClient: NSObject {
         let request = NSMutableURLRequest(url: urlFromParameters(parameters, withPathExtension: method, apiType:  apiType))
         
         if apiType == .parseAPI {
-            request.addValue(Constants.ParseParameterValues.restAPIKey, forHTTPHeaderField: Constants.ParseParameterKeys.restAPIKey)
             request.addValue(Constants.ParseParameterValues.parseID, forHTTPHeaderField: Constants.ParseParameterKeys.parseID)
+            request.addValue(Constants.ParseParameterValues.restAPIKey, forHTTPHeaderField: Constants.ParseParameterKeys.restAPIKey)
+            
         }
         
         let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
