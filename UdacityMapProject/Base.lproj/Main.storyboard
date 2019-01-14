@@ -208,7 +208,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cCY-GG-Klp">
-                                <rect key="frame" x="87" y="270.5" width="146.5" height="90"/>
+                                <rect key="frame" x="87" y="271" width="146.5" height="90"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXO-OG-M6L">
                                         <rect key="frame" x="0.0" y="0.0" width="146.5" height="30"/>
@@ -244,12 +244,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ybv-uL-Biz" firstAttribute="trailing" secondItem="nxV-47-P9I" secondAttribute="trailing" id="8q2-j0-DIh"/>
-                            <constraint firstItem="ybv-uL-Biz" firstAttribute="top" secondItem="nxV-47-P9I" secondAttribute="top" id="UrD-5F-cnz"/>
+                            <constraint firstItem="nxV-47-P9I" firstAttribute="bottom" secondItem="cCY-GG-Klp" secondAttribute="bottom" constant="207" id="KUi-Rd-bgP"/>
+                            <constraint firstItem="ybv-uL-Biz" firstAttribute="top" secondItem="nxV-47-P9I" secondAttribute="top" id="Rm2-J7-S27"/>
                             <constraint firstItem="cCY-GG-Klp" firstAttribute="leading" secondItem="nxV-47-P9I" secondAttribute="leading" constant="87" id="Za7-MR-9Ri"/>
                             <constraint firstItem="nxV-47-P9I" firstAttribute="trailing" secondItem="cCY-GG-Klp" secondAttribute="trailing" constant="86.5" id="acL-XS-wrR"/>
-                            <constraint firstItem="cCY-GG-Klp" firstAttribute="top" secondItem="ybv-uL-Biz" secondAttribute="bottom" constant="206.5" id="kO7-eW-DQg"/>
                             <constraint firstItem="ybv-uL-Biz" firstAttribute="leading" secondItem="nxV-47-P9I" secondAttribute="leading" id="o1i-I2-nYB"/>
-                            <constraint firstItem="nxV-47-P9I" firstAttribute="bottom" secondItem="cCY-GG-Klp" secondAttribute="bottom" constant="375.32999999999998" id="tmO-Gl-4CP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nxV-47-P9I"/>
                     </view>
