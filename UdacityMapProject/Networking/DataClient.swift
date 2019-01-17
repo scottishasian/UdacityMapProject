@@ -37,7 +37,6 @@ class DataClient: NSObject {
         if apiType == .parseAPI {
             request.addValue(Constants.ParseParameterValues.parseID, forHTTPHeaderField: Constants.ParseParameterKeys.parseID)
             request.addValue(Constants.ParseParameterValues.restAPIKey, forHTTPHeaderField: Constants.ParseParameterKeys.restAPIKey)
-            
         }
         
         let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
@@ -66,9 +65,17 @@ class DataClient: NSObject {
                 return
             }
             
+            var newData = data
+            if apiType == APIType.udacityAPI {
+                let range = Range(5..<data.count)
+                newData = data.subdata(in: range)
+                
+            }
+            print(String(data: newData, encoding: .utf8)!)
+            
             /* 5/6. Parse the data and use the data (happens in completion handler) */
             //self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHandlerForGET)
-            completionHandlerForGET(data, nil)
+            completionHandlerForGET(newData, nil)
         }
         
         task.resume()

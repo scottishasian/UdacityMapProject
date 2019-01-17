@@ -45,7 +45,7 @@ class InformationPostingView: UIViewController, UITextFieldDelegate {
             return
         } else {
             LocationTextField.resignFirstResponder()
-            dismiss(animated: true, completion: nil)
+            //dismiss(animated: true, completion: nil)
         }
         
         guard let newURL = URL(string: newWebsite), UIApplication.shared.canOpenURL(newURL) else {

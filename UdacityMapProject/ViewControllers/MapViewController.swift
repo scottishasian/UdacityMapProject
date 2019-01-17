@@ -60,7 +60,8 @@ class MapViewController: BaseMapViewController {
                 print(error.localizedDescription)
                 return
             }
-            DataClient.sharedInstance().userName = studentInfo?.user.name ?? ""
+            //DataClient.sharedInstance().userName = studentInfo?.user.name ?? ""
+            DataClient.sharedInstance().userName = studentInfo?.firstName ?? ""
         })
     }
     
