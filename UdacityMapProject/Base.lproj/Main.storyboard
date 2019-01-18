@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RHL-Kt-tPb">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,23 +16,23 @@
             <objects>
                 <tableViewController id="IAh-ao-5aW" customClass="StudentListViewController" customModule="UdacityMapProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SPS-mB-utr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="JJH-mA-rbR">
-                            <rect key="frame" x="0.0" y="120" width="320" height="20"/>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" id="JJH-mA-rbR">
+                            <rect key="frame" x="0.0" y="120" width="375" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CellView" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellView" rowHeight="92" id="Han-tL-gef" customClass="CellView" customModule="UdacityMapProject" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="92"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Han-tL-gef" id="TFS-zg-DfK" customClass="CellView" customModule="UdacityMapProject" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="91.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skm-8X-7q8">
-                                            <rect key="frame" x="0.0" y="0.0" width="119.5" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="174.5" height="64"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_pin" translatesAutoresizingMaskIntoConstraints="NO" id="PuB-wS-6om">
                                                     <rect key="frame" x="0.0" y="0.0" width="51" height="64"/>
@@ -42,16 +42,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RBl-ym-zjf">
-                                                    <rect key="frame" x="51" y="0.0" width="68.5" height="64"/>
+                                                    <rect key="frame" x="51" y="0.0" width="123.5" height="64"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StudentName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbH-zS-qVA">
-                                                            <rect key="frame" x="0.0" y="0.0" width="68.5" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="123.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="StudentURL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnz-NR-K1a">
-                                                            <rect key="frame" x="0.0" y="20.5" width="68.5" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="20.5" width="123.5" height="43.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -112,7 +112,7 @@
                 <navigationController id="6hF-wn-VZY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Location List" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="Nfm-rA-w5o"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3R6-aH-ERq">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -128,14 +128,14 @@
             <objects>
                 <viewController storyboardIdentifier="MapView" id="KtN-jh-3Nu" userLabel="Map View Controller" customClass="MapViewController" customModule="UdacityMapProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KKC-pz-6W0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XWr-ov-XMz">
-                                <rect key="frame" x="0.0" y="54" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="54" width="375" height="559"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RzK-oq-We1">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
                                     </mapView>
                                 </subviews>
                                 <constraints>
@@ -197,12 +197,13 @@
         <scene sceneID="nc4-lc-vD8">
             <objects>
                 <viewController storyboardIdentifier="ChangeLocationController" id="9Ca-FJ-Ze8" customClass="InformationPostingView" customModule="UdacityMapProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="14T-h0-kVJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <view key="view" contentMode="scaleToFill" id="14T-h0-kVJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-uL-Biz">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-uL-Biz">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Change Location" id="wvl-R1-RzH">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="ZoV-BW-WQj">
@@ -213,23 +214,23 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cCY-GG-Klp">
-                                <rect key="frame" x="87" y="270.5" width="146.5" height="90"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cCY-GG-Klp">
+                                <rect key="frame" x="73.5" y="253.5" width="228" height="160"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXO-OG-M6L">
-                                        <rect key="frame" x="0.0" y="0.0" width="146.5" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXO-OG-M6L">
+                                        <rect key="frame" x="0.0" y="0.0" width="228" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lzZ-f1-M9M" userLabel="Link Text Field">
-                                        <rect key="frame" x="0.0" y="30" width="146.5" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lzZ-f1-M9M" userLabel="Link Text Field">
+                                        <rect key="frame" x="0.0" y="30" width="228" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEC-79-FML">
-                                        <rect key="frame" x="0.0" y="60" width="146.5" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEC-79-FML">
+                                        <rect key="frame" x="0.0" y="60" width="228" height="100"/>
                                         <color key="backgroundColor" red="0.0086828044040000007" green="0.0086828044040000007" blue="0.0086828044040000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Search">
@@ -241,21 +242,15 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="gXO-OG-M6L" firstAttribute="top" secondItem="cCY-GG-Klp" secondAttribute="top" id="Mmh-KS-IbL"/>
-                                    <constraint firstAttribute="trailing" secondItem="gXO-OG-M6L" secondAttribute="trailing" id="YWP-YJ-vJI"/>
-                                    <constraint firstItem="gXO-OG-M6L" firstAttribute="leading" secondItem="cCY-GG-Klp" secondAttribute="leading" id="bem-5v-xTC"/>
+                                    <constraint firstAttribute="height" constant="160" id="feh-fK-Ksm"/>
+                                    <constraint firstAttribute="width" constant="228" id="shv-2z-FAZ"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ybv-uL-Biz" firstAttribute="trailing" secondItem="nxV-47-P9I" secondAttribute="trailing" id="8q2-j0-DIh"/>
-                            <constraint firstItem="ybv-uL-Biz" firstAttribute="top" secondItem="nxV-47-P9I" secondAttribute="top" id="UrD-5F-cnz"/>
-                            <constraint firstItem="cCY-GG-Klp" firstAttribute="leading" secondItem="nxV-47-P9I" secondAttribute="leading" constant="87" id="Za7-MR-9Ri"/>
-                            <constraint firstItem="nxV-47-P9I" firstAttribute="trailing" secondItem="cCY-GG-Klp" secondAttribute="trailing" constant="86.5" id="acL-XS-wrR"/>
-                            <constraint firstItem="cCY-GG-Klp" firstAttribute="top" secondItem="ybv-uL-Biz" secondAttribute="bottom" constant="206.5" id="kO7-eW-DQg"/>
-                            <constraint firstItem="ybv-uL-Biz" firstAttribute="leading" secondItem="nxV-47-P9I" secondAttribute="leading" id="o1i-I2-nYB"/>
-                            <constraint firstItem="nxV-47-P9I" firstAttribute="bottom" secondItem="cCY-GG-Klp" secondAttribute="bottom" constant="375.32999999999998" id="tmO-Gl-4CP"/>
+                            <constraint firstItem="cCY-GG-Klp" firstAttribute="centerX" secondItem="14T-h0-kVJ" secondAttribute="centerX" id="5JC-Zz-1zD"/>
+                            <constraint firstItem="cCY-GG-Klp" firstAttribute="centerY" secondItem="14T-h0-kVJ" secondAttribute="centerY" id="GLF-4e-Hnq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nxV-47-P9I"/>
                     </view>
@@ -267,21 +262,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7X-Hb-adF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2755.072463768116" y="167.93478260869566"/>
+            <point key="canvasLocation" x="2754.4000000000001" y="167.76611694152925"/>
         </scene>
         <!--Map Pin View Controller-->
         <scene sceneID="PDC-21-afW">
             <objects>
                 <viewController storyboardIdentifier="MapPinView" id="xph-aK-OlJ" customClass="MapPinViewController" customModule="UdacityMapProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yyy-8p-ocn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HFX-uf-bHT">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTk-FH-mau">
-                                <rect key="frame" x="49" y="593" width="221" height="35"/>
+                                <rect key="frame" x="49" y="593" width="276" height="54"/>
                                 <color key="backgroundColor" red="0.0086828044040000007" green="0.0086828044040000007" blue="0.0086828044040000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Finish">
@@ -318,11 +313,11 @@
             <objects>
                 <viewController id="RHL-Kt-tPb" userLabel="Login View Controller" customClass="LoginViewController" customModule="UdacityMapProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KKX-qZ-vNQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="BiD-67-DMn">
-                                <rect key="frame" x="36" y="124" width="248.5" height="162"/>
+                                <rect key="frame" x="63.5" y="124" width="248.5" height="162"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZwZ-0d-fEC">
                                         <rect key="frame" x="0.0" y="0.0" width="248.5" height="30"/>
@@ -387,7 +382,7 @@
                                 </constraints>
                             </stackView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IrS-Md-hS7">
-                                <rect key="frame" x="150" y="358" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="358" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -417,7 +412,7 @@
                     <tabBarItem key="tabBarItem" title="Map View" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="ztC-sP-BpJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qeG-kk-qK3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
