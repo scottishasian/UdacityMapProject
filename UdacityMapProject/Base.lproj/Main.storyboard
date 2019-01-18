@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" id="JJH-mA-rbR">
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="JJH-mA-rbR">
                             <rect key="frame" x="0.0" y="120" width="375" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </activityIndicatorView>
@@ -93,7 +93,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Student List View" id="KoG-EL-xg2" userLabel="Student List View">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="aZt-bH-SyZ"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="aZt-bH-SyZ">
+                            <connections>
+                                <action selector="logout:" destination="IAh-ao-5aW" id="9zr-JM-qs8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dataProvider" destination="gfe-ey-Hwh" id="48r-CN-BNd"/>
@@ -201,9 +205,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-uL-Biz">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-uL-Biz">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Change Location" id="wvl-R1-RzH">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="ZoV-BW-WQj">
@@ -215,22 +218,22 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cCY-GG-Klp">
-                                <rect key="frame" x="87" y="271" width="146.5" height="90"/>
+                                <rect key="frame" x="87" y="300" width="201.5" height="160"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXO-OG-M6L">
-                                        <rect key="frame" x="0.0" y="0.0" width="228" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="201.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lzZ-f1-M9M" userLabel="Link Text Field">
-                                        <rect key="frame" x="0.0" y="30" width="228" height="30"/>
+                                        <rect key="frame" x="0.0" y="30" width="201.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEC-79-FML">
-                                        <rect key="frame" x="0.0" y="60" width="228" height="100"/>
+                                        <rect key="frame" x="0.0" y="60" width="201.5" height="100"/>
                                         <color key="backgroundColor" red="0.0086828044040000007" green="0.0086828044040000007" blue="0.0086828044040000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Search">

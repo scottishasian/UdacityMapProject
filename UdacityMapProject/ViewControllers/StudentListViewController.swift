@@ -45,6 +45,15 @@ class StudentListViewController: UIViewController, SelectStudentLocationDelegate
         openLink(information.mediaURL)
     }
     
+    @IBAction func logout(_ sender: Any) {
+        DataClient.sharedInstance().logoutUser { (success, error) in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.showInfo(withTitle: "Log Out Error", withMessage: (error?.localizedDescription)!)
+            }
+        }
+    }
     
 
 }
