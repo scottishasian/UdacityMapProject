@@ -12,7 +12,7 @@ class BaseUIViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        NotificationCenter.default.addObserver(self, selector: #selector(loadStudentsInformation), name: .reload, object: nil)
         loadStudentsInformation()
     }
     
@@ -21,10 +21,12 @@ class BaseUIViewController: UITabBarController {
             (studentDetails, error) in
             if let error = error {
                 self.showInfo(withTitle: "Error", withMessage: error.localizedDescription)
+                NotificationCenter.default.post(name: .reloadMapCompleted, object: nil)
                 return
             }
             if let studentDetails = studentDetails {
                 StudentsLocations.sharedData.studentsInformation = studentDetails
+                NotificationCenter.default.post(name: .reloadMapCompleted, object: nil)
             }
         }
     }

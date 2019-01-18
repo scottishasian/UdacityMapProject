@@ -94,7 +94,7 @@ class InformationPostingView: UIViewController, UITextFieldDelegate {
             "firstName": firstName,
             "lastName": surname,
             "mapString": LocationTextField.text!,
-            //"mediaURL": URLTextField.text!,
+            "mediaURL": LinkTextField.text!,
             "latitude": coordinates.latitude,
             "longitude": coordinates.longitude,
             ] as [String: AnyObject]

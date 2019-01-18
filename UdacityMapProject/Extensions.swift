@@ -37,4 +37,10 @@ extension UIViewController {
     
 }
 
+extension Notification.Name {
+    static let reload = Notification.Name("reload")
+    static let startMapReload = Notification.Name("reloadStarted")
+    static let reloadMapCompleted = Notification.Name("reloadCompleted")
+}
+
 

@@ -15,9 +15,9 @@ class BaseMapViewController: UIViewController, MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         let reusablePin = "pin"
-        
+
         var placedPins = mapView.dequeueReusableAnnotationView(withIdentifier: reusablePin) as? MKPinAnnotationView
-        
+
         if placedPins == nil {
             placedPins = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reusablePin)
             placedPins?.canShowCallout = true
@@ -26,8 +26,9 @@ class BaseMapViewController: UIViewController, MKMapViewDelegate {
         } else {
             placedPins?.annotation = annotation
         }
-        
+
         return placedPins
+
     }
     
     //https://developer.apple.com/documentation/mapkit/mkannotationview
