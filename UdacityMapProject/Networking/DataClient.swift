@@ -32,7 +32,7 @@ class DataClient: NSObject {
     
     func taskForGetMethod(_ method: String, parameters: [String:AnyObject], apiType: APIType = .udacityAPI, completionHandlerForGET: @escaping (_ result: Data?, _ error: NSError?) -> Void) -> URLSessionDataTask {
         
-        let request = NSMutableURLRequest(url: urlFromParameters(parameters, withPathExtension: method, apiType:  apiType))
+        let request = NSMutableURLRequest(url: urlFromParameters(parameters, withPathExtension: method, apiType: apiType))
         
         if apiType == .parseAPI {
             request.addValue(Constants.ParseParameterValues.parseID, forHTTPHeaderField: Constants.ParseParameterKeys.parseID)
@@ -242,12 +242,24 @@ class DataClient: NSObject {
         //if the apiType is not the udacityAPI then use the Parse API
         components.host = apiType == .udacityAPI ? Constants.Udacity.APIHost : Constants.Parse.APIHost
         components.path = (apiType == .udacityAPI ? Constants.Udacity.APIPath : Constants.Parse.APIPath) + (withPathExtension ?? "")
-        components.queryItems = [URLQueryItem]()
+        //components.queryItems = [URLQueryItem]()
+        components.queryItems = nil
+        
+        var queryItems = [URLQueryItem]()
         
         for (key, value) in parameters {
+            
             let queryItem = URLQueryItem(name: key, value: "\(value)")
-            components.queryItems!.append(queryItem)
+            queryItems.append(queryItem)
         }
+        
+        if queryItems.count > 0 {
+            
+            components.queryItems = queryItems
+        }
+        
         return components.url!
+        
+        
     }
 }

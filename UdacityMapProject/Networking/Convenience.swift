@@ -111,7 +111,7 @@ extension DataClient {
     
     //To fetch user location
     func studentsDetails(completionHandler: @escaping (_ result: [StudentDetails]?, _ error: NSError?) -> Void) {
-        let parameters = [Constants.ParseParameterKeys.Order: "-updatedAt" as AnyObject]
+        let parameters = [Constants.ParseParameterKeys.Order: "-updateTime" as AnyObject]
         _ = taskForGetMethod(Constants.ParseMethods.StudentLocation, parameters: parameters, apiType: .parseAPI) { (data, error) in
             //When called, all the below is skipped.
             if let error = error {

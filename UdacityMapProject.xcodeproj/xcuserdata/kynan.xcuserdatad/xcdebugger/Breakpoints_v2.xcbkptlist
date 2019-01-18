@@ -6,11 +6,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UdacityMapProject/Networking/Convenience.swift"
-            timestampString = "568568004.512148"
+            timestampString = "569328894.985351"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UdacityMapProject/Networking/Convenience.swift"
-            timestampString = "568568004.512248"
+            timestampString = "569328894.985815"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UdacityMapProject/Networking/Convenience.swift"
-            timestampString = "568568004.512328"
+            timestampString = "569328894.986167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UdacityMapProject/Networking/Convenience.swift"
-            timestampString = "568568004.512411"
+            timestampString = "569328894.986479"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
@@ -102,11 +102,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UdacityMapProject/Networking/Convenience.swift"
-            timestampString = "568568004.5124789"
+            timestampString = "569328894.986788"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
@@ -115,14 +115,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "UdacityMapProject.DataClient.studentsDetails(completionHandler: (Swift.Optional&lt;Swift.Array&lt;UdacityMapProject.StudentDetails&gt;&gt;, Swift.Optional&lt;__C.NSError&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "UdacityMapProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kynan/Desktop/UI%20Testing/Other/UdacityMapProject/UdacityMapProject/Networking/Convenience.swift"
-                  timestampString = "568568004.613587"
+                  timestampString = "568739638.512503"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "115"
@@ -130,14 +130,14 @@
                   offsetFromSymbolStart = "275">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in UdacityMapProject.DataClient.studentsDetails(completionHandler: (Swift.Optional&lt;Swift.Array&lt;UdacityMapProject.StudentDetails&gt;&gt;, Swift.Optional&lt;__C.NSError&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "UdacityMapProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kynan/Desktop/UI%20Testing/Other/UdacityMapProject/UdacityMapProject/Networking/Convenience.swift"
-                  timestampString = "568568004.615955"
+                  timestampString = "568739638.514195"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "117"
@@ -154,12 +154,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UdacityMapProject/Networking/Convenience.swift"
-            timestampString = "568568004.5125459"
+            timestampString = "569328894.9870991"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
             endingLineNumber = "114"
             landmarkName = "studentsDetails(completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UdacityMapProject/Networking/DataClient.swift"
+            timestampString = "569328894.987331"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "taskForGetMethod(_:parameters:apiType:completionHandlerForGET:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UdacityMapProject/Networking/Convenience.swift"
+            timestampString = "569328894.987379"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "parseStudentInformation(data:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
